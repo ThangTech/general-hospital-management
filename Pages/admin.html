@@ -53,7 +53,7 @@
         <div id="home" class="page fade-in">
             <div class="header-section">
                 <h4>Tổng quan hoạt động</h4>
-                <p style="color: #666; font-size: 14px;">Hôm nay: 27/11/2025</p>
+                <p class="date-text">Hôm nay: 27/11/2025</p>
             </div>
 
             <div class="dashboard">
@@ -111,7 +111,7 @@
                     <i class="ti-plus"></i> Tiếp nhận Mới
                 </button>
             </div>
-            <div class="block" style="padding: 0; box-shadow: none; background: transparent;">
+            <div class="block block-no-padding">
                 <table class="art-table"> 
                     <thead>
                         <tr>
@@ -174,9 +174,9 @@
                 </button>
             </div>
 
-            <div class="block" style="margin-bottom: 20px;">
-                <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 15px;">
-                    <select id="departmentFilter" onchange="filterBeds()" style="padding: 8px 15px; border: 1px solid #ddd; border-radius: 6px;">
+            <div class="block block-mb-20">
+                <div class="filter-controls">
+                    <select id="departmentFilter" onchange="filterBeds()" class="input-default">
                         <option value="all">Tất cả khoa</option>
                         <option value="khoa-noi">Khoa Nội</option>
                         <option value="khoa-ngoai">Khoa Ngoại</option>
@@ -184,29 +184,29 @@
                         <option value="khoa-san">Khoa Sản</option>
                         <option value="khoa-cap-cuu">Khoa Cấp cứu</option>
                     </select>
-                    <button class="btn" style="background: #e3f2fd; color: #0056b3;">Tất cả</button>
-                    <button class="btn" style="background: #f5f5f5; color: #666;">Trống</button>
-                    <button class="btn" style="background: #f5f5f5; color: #666;">Đang sử dụng</button>
+                    <button class="btn btn-primary-light">Tất cả</button>
+                    <button class="btn btn-gray">Trống</button>
+                    <button class="btn btn-gray">Đang sử dụng</button>
                 </div>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px;">
+            <div class="dept-stats-grid">
                 <div class="block">
                     <h4><i class="ti-home"></i> Khoa Nội</h4>
-                    <div style="margin-top: 15px;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                    <div class="dept-stats-container">
+                        <div class="stats-row">
                             <span>Tổng giường:</span>
                             <b>50</b>
                         </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <div class="stats-row">
                             <span>Đang sử dụng:</span>
-                            <b style="color: #dc3545;">35</b>
+                            <b class="text-danger">35</b>
                         </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <div class="stats-row">
                             <span>Trống:</span>
-                            <b style="color: #28a745;">15</b>
+                            <b class="text-success">15</b>
                         </div>
-                        <div style="display: flex; justify-content: space-between;">
+                        <div class="stats-row-last">
                             <span>Công suất:</span>
                             <b>70%</b>
                         </div>
@@ -215,20 +215,20 @@
 
                 <div class="block">
                     <h4><i class="ti-home"></i> Khoa Ngoại</h4>
-                    <div style="margin-top: 15px;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                    <div class="dept-stats-container">
+                        <div class="stats-row">
                             <span>Tổng giường:</span>
                             <b>40</b>
                         </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <div class="stats-row">
                             <span>Đang sử dụng:</span>
-                            <b style="color: #dc3545;">28</b>
+                            <b class="text-danger">28</b>
                         </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <div class="stats-row">
                             <span>Trống:</span>
-                            <b style="color: #28a745;">12</b>
+                            <b class="text-success">12</b>
                         </div>
-                        <div style="display: flex; justify-content: space-between;">
+                        <div class="stats-row-last">
                             <span>Công suất:</span>
                             <b>70%</b>
                         </div>
@@ -237,20 +237,20 @@
 
                 <div class="block">
                     <h4><i class="ti-home"></i> Khoa Nhi</h4>
-                    <div style="margin-top: 15px;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                    <div class="dept-stats-container">
+                        <div class="stats-row">
                             <span>Tổng giường:</span>
                             <b>30</b>
                         </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <div class="stats-row">
                             <span>Đang sử dụng:</span>
-                            <b style="color: #dc3545;">22</b>
+                            <b class="text-danger">22</b>
                         </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <div class="stats-row">
                             <span>Trống:</span>
-                            <b style="color: #28a745;">8</b>
+                            <b class="text-success">8</b>
                         </div>
-                        <div style="display: flex; justify-content: space-between;">
+                        <div class="stats-row-last">
                             <span>Công suất:</span>
                             <b>73%</b>
                         </div>
@@ -259,20 +259,20 @@
 
                 <div class="block">
                     <h4><i class="ti-home"></i> Khoa Sản</h4>
-                    <div style="margin-top: 15px;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                    <div class="dept-stats-container">
+                        <div class="stats-row">
                             <span>Tổng giường:</span>
                             <b>25</b>
                         </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <div class="stats-row">
                             <span>Đang sử dụng:</span>
-                            <b style="color: #dc3545;">18</b>
+                            <b class="text-danger">18</b>
                         </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <div class="stats-row">
                             <span>Trống:</span>
-                            <b style="color: #28a745;">7</b>
+                            <b class="text-success">7</b>
                         </div>
-                        <div style="display: flex; justify-content: space-between;">
+                        <div class="stats-row-last">
                             <span>Công suất:</span>
                             <b>72%</b>
                         </div>
@@ -280,7 +280,7 @@
                 </div>
             </div>
 
-            <div class="block" style="padding: 0; box-shadow: none; background: transparent;">
+            <div class="block block-no-padding">
                 <table class="art-table">
                     <thead>
                         <tr>
@@ -298,7 +298,7 @@
                             <td>GB001</td>
                             <td>Khoa Nội</td>
                             <td>P.301</td>
-                            <td><b>Nguyễn Văn An</b><br><small style="color: #999;">BN001</small></td>
+                            <td><b>Nguyễn Văn An</b><br><small class="table-small-text">BN001</small></td>
                             <td>25/11/2025</td>
                             <td><span class="badge badge-danger">Đang sử dụng</span></td>
                             <td>
@@ -310,7 +310,7 @@
                             <td>GB002</td>
                             <td>Khoa Nội</td>
                             <td>P.301</td>
-                            <td><b>Trần Thị Bưởi</b><br><small style="color: #999;">BN002</small></td>
+                            <td><b>Trần Thị Bưởi</b><br><small class="table-small-text">BN002</small></td>
                             <td>20/11/2025</td>
                             <td><span class="badge badge-danger">Đang sử dụng</span></td>
                             <td>
@@ -322,7 +322,7 @@
                             <td>GB003</td>
                             <td>Khoa Ngoại</td>
                             <td>P.405</td>
-                            <td><b>Lê Văn Cường</b><br><small style="color: #999;">BN003</small></td>
+                            <td><b>Lê Văn Cường</b><br><small class="table-small-text">BN003</small></td>
                             <td>15/11/2025</td>
                             <td><span class="badge badge-danger">Đang sử dụng</span></td>
                             <td>
@@ -339,7 +339,7 @@
                             <td><span class="badge badge-success">Trống</span></td>
                             <td>
                                 <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
-                                <button class="btn add-btn" style="padding: 6px 12px; font-size: 12px;"><i class="ti-plus"></i> Phân bổ</button>
+                                <button class="btn add-btn btn-small"><i class="ti-plus"></i> Phân bổ</button>
                             </td>
                         </tr>
                         <tr>
@@ -351,7 +351,7 @@
                             <td><span class="badge badge-success">Trống</span></td>
                             <td>
                                 <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
-                                <button class="btn add-btn" style="padding: 6px 12px; font-size: 12px;"><i class="ti-plus"></i> Phân bổ</button>
+                                <button class="btn add-btn btn-small"><i class="ti-plus"></i> Phân bổ</button>
                             </td>
                         </tr>
                     </tbody>
@@ -367,12 +367,12 @@
                 </button>
             </div>
 
-            <div class="block" style="margin-bottom: 20px;">
-                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                    <button class="btn" style="background: #e3f2fd; color: #0056b3;">Hôm nay</button>
-                    <button class="btn" style="background: #f5f5f5; color: #666;">Tuần này</button>
-                    <button class="btn" style="background: #f5f5f5; color: #666;">Tháng này</button>
-                    <select style="padding: 8px 15px; border: 1px solid #ddd; border-radius: 6px;">
+            <div class="block block-mb-20">
+                <div class="filter-controls-simple">
+                    <button class="btn btn-primary-light">Hôm nay</button>
+                    <button class="btn btn-gray">Tuần này</button>
+                    <button class="btn btn-gray">Tháng này</button>
+                    <select class="input-default">
                         <option>Tất cả phòng mổ</option>
                         <option>Phòng mổ 1</option>
                         <option>Phòng mổ 2</option>
@@ -381,7 +381,7 @@
                 </div>
             </div>
 
-            <div class="dashboard" style="margin-bottom: 30px;">
+            <div class="dashboard dashboard-mb-30">
                 <div class="card blue">
                     <i class="ti-calendar"></i>
                     <p>Ca mổ hôm nay</p>
@@ -404,7 +404,7 @@
                 </div>
             </div>
 
-            <div class="block" style="padding: 0; box-shadow: none; background: transparent;">
+            <div class="block block-no-padding">
                 <table class="art-table">
                     <thead>
                         <tr>
@@ -422,11 +422,11 @@
                     <tbody>
                         <tr>
                             <td>CM001</td>
-                            <td><b>Nguyễn Văn An</b><br><small style="color: #999;">BN001</small></td>
+                            <td><b>Nguyễn Văn An</b><br><small class="table-small-text">BN001</small></td>
                             <td>Phẫu thuật nội soi</td>
                             <td>BS. Trần Văn Hùng</td>
                             <td>Phòng mổ 1</td>
-                            <td>27/11/2025<br><small style="color: #999;">08:00</small></td>
+                            <td>27/11/2025<br><small class="table-small-text">08:00</small></td>
                             <td>2 giờ</td>
                             <td><span class="badge badge-success">Đã hoàn thành</span></td>
                             <td>
@@ -436,11 +436,11 @@
                         </tr>
                         <tr>
                             <td>CM002</td>
-                            <td><b>Trần Thị Bưởi</b><br><small style="color: #999;">BN002</small></td>
+                            <td><b>Trần Thị Bưởi</b><br><small class="table-small-text">BN002</small></td>
                             <td>Phẫu thuật mở</td>
                             <td>BS. Lê Thị Mai</td>
                             <td>Phòng mổ 2</td>
-                            <td>27/11/2025<br><small style="color: #999;">10:30</small></td>
+                            <td>27/11/2025<br><small class="table-small-text">10:30</small></td>
                             <td>3 giờ</td>
                             <td><span class="badge badge-warning">Đang thực hiện</span></td>
                             <td>
@@ -450,11 +450,11 @@
                         </tr>
                         <tr>
                             <td>CM003</td>
-                            <td><b>Lê Văn Cường</b><br><small style="color: #999;">BN003</small></td>
+                            <td><b>Lê Văn Cường</b><br><small class="table-small-text">BN003</small></td>
                             <td>Thủ thuật nhỏ</td>
                             <td>BS. Phạm Văn Đức</td>
                             <td>Phòng mổ 3</td>
-                            <td>27/11/2025<br><small style="color: #999;">14:00</small></td>
+                            <td>27/11/2025<br><small class="table-small-text">14:00</small></td>
                             <td>1 giờ</td>
                             <td><span class="badge badge-danger">Chờ thực hiện</span></td>
                             <td>
@@ -464,11 +464,11 @@
                         </tr>
                         <tr>
                             <td>CM004</td>
-                            <td><b>Phạm Thị Dung</b><br><small style="color: #999;">BN004</small></td>
+                            <td><b>Phạm Thị Dung</b><br><small class="table-small-text">BN004</small></td>
                             <td>Phẫu thuật cấp cứu</td>
                             <td>BS. Nguyễn Văn Nam</td>
                             <td>Phòng mổ 1</td>
-                            <td>28/11/2025<br><small style="color: #999;">09:00</small></td>
+                            <td>28/11/2025<br><small class="table-small-text">09:00</small></td>
                             <td>4 giờ</td>
                             <td><span class="badge badge-success">Đã lên lịch</span></td>
                             <td>
@@ -484,15 +484,15 @@
         <div id="records" class="page hidden fade-in">
             <div class="art-header">
                 <h4><i class="ti-file"></i> Hồ sơ Bệnh án Điện tử (EHR)</h4>
-                <div style="display: flex; gap: 10px;">
-                    <input type="text" placeholder="Tìm kiếm theo mã BN, tên..." style="padding: 8px 15px; border: 1px solid #ddd; border-radius: 6px; width: 250px;">
+                <div class="header-actions">
+                    <input type="text" placeholder="Tìm kiếm theo mã BN, tên..." class="input-search">
                     <button class="btn add-btn" onclick="openRecordForm()">
                         <i class="ti-plus"></i> Tạo hồ sơ mới
                     </button>
                 </div>
             </div>
 
-            <div class="block" style="padding: 0; box-shadow: none; background: transparent;">
+            <div class="block block-no-padding">
                 <table class="art-table">
                     <thead>
                         <tr>
@@ -511,7 +511,7 @@
                     <tbody>
                         <tr>
                             <td>HS001</td>
-                            <td><b>Nguyễn Văn An</b><br><small style="color: #999;">BN001 - 1990</small></td>
+                            <td><b>Nguyễn Văn An</b><br><small class="table-small-text">BN001 - 1990</small></td>
                             <td>Viêm phổi cấp</td>
                             <td>BS. Trần Văn Hùng</td>
                             <td>Khoa Nội</td>
@@ -526,7 +526,7 @@
                         </tr>
                         <tr>
                             <td>HS002</td>
-                            <td><b>Trần Thị Bưởi</b><br><small style="color: #999;">BN002 - 1985</small></td>
+                            <td><b>Trần Thị Bưởi</b><br><small class="table-small-text">BN002 - 1985</small></td>
                             <td>Sốt xuất huyết</td>
                             <td>BS. Lê Thị Mai</td>
                             <td>Khoa Ngoại</td>
@@ -541,7 +541,7 @@
                         </tr>
                         <tr>
                             <td>HS003</td>
-                            <td><b>Lê Văn Cường</b><br><small style="color: #999;">BN003 - 2000</small></td>
+                            <td><b>Lê Văn Cường</b><br><small class="table-small-text">BN003 - 2000</small></td>
                             <td>Gãy xương kín</td>
                             <td>BS. Phạm Văn Đức</td>
                             <td>Khoa Ngoại</td>
@@ -556,7 +556,7 @@
                         </tr>
                         <tr>
                             <td>HS004</td>
-                            <td><b>Phạm Thị Dung</b><br><small style="color: #999;">BN004 - 1975</small></td>
+                            <td><b>Phạm Thị Dung</b><br><small class="table-small-text">BN004 - 1975</small></td>
                             <td>Tiểu đường type 2</td>
                             <td>BS. Nguyễn Văn Nam</td>
                             <td>Khoa Nội</td>
@@ -582,7 +582,7 @@
                 </button>
             </div>
 
-            <div class="dashboard" style="margin-bottom: 30px;">
+            <div class="dashboard dashboard-mb-30">
                 <div class="card blue">
                     <i class="ti-money"></i>
                     <p>Tổng thu (Tháng)</p>
@@ -605,25 +605,25 @@
                 </div>
             </div>
 
-            <div class="block" style="margin-bottom: 30px;">
+            <div class="block block-mb-30">
                 <h4><i class="ti-id-badge"></i> Thông tin Bảo hiểm y tế</h4>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
-                    <div style="padding: 15px; background: #f8f9fa; border-radius: 8px;">
-                        <p style="color: #666; font-size: 13px; margin-bottom: 5px;">Tổng số thẻ BHYT</p>
-                        <h3 style="color: #0056b3; margin: 0;">1.245</h3>
+                <div class="d-grid grid-auto-fit-250 gap-20 mt-20">
+                    <div class="info-card">
+                        <p class="info-card-label">Tổng số thẻ BHYT</p>
+                        <h3 class="info-card-value-primary">1.245</h3>
                     </div>
-                    <div style="padding: 15px; background: #f8f9fa; border-radius: 8px;">
-                        <p style="color: #666; font-size: 13px; margin-bottom: 5px;">Đang sử dụng</p>
-                        <h3 style="color: #28a745; margin: 0;">856</h3>
+                    <div class="info-card">
+                        <p class="info-card-label">Đang sử dụng</p>
+                        <h3 class="info-card-value-success">856</h3>
                     </div>
-                    <div style="padding: 15px; background: #f8f9fa; border-radius: 8px;">
-                        <p style="color: #666; font-size: 13px; margin-bottom: 5px;">Tỷ lệ thanh toán BHYT</p>
-                        <h3 style="color: #ffc107; margin: 0;">33.6%</h3>
+                    <div class="info-card">
+                        <p class="info-card-label">Tỷ lệ thanh toán BHYT</p>
+                        <h3 class="info-card-value-warning">33.6%</h3>
                     </div>
                 </div>
             </div>
 
-            <div class="block" style="padding: 0; box-shadow: none; background: transparent;">
+            <div class="block block-no-padding">
                 <table class="art-table">
                     <thead>
                         <tr>
@@ -643,7 +643,7 @@
                     <tbody>
                         <tr>
                             <td>HD001</td>
-                            <td><b>Nguyễn Văn An</b><br><small style="color: #999;">BHYT: 80%</small></td>
+                            <td><b>Nguyễn Văn An</b><br><small class="table-small-text">BHYT: 80%</small></td>
                             <td>Khám + Điều trị</td>
                             <td><b>5.500.000 đ</b></td>
                             <td>4.400.000 đ</td>
@@ -659,7 +659,7 @@
                         </tr>
                         <tr>
                             <td>HD002</td>
-                            <td><b>Trần Thị Bưởi</b><br><small style="color: #999;">BHYT: 100%</small></td>
+                            <td><b>Trần Thị Bưởi</b><br><small class="table-small-text">BHYT: 100%</small></td>
                             <td>Khám + Xét nghiệm</td>
                             <td><b>2.800.000 đ</b></td>
                             <td>2.800.000 đ</td>
@@ -675,7 +675,7 @@
                         </tr>
                         <tr>
                             <td>HD003</td>
-                            <td><b>Lê Văn Cường</b><br><small style="color: #999;">Không BHYT</small></td>
+                            <td><b>Lê Văn Cường</b><br><small class="table-small-text">Không BHYT</small></td>
                             <td>Phẫu thuật</td>
                             <td><b>15.000.000 đ</b></td>
                             <td>0 đ</td>
@@ -691,7 +691,7 @@
                         </tr>
                         <tr>
                             <td>HD004</td>
-                            <td><b>Phạm Thị Dung</b><br><small style="color: #999;">BHYT: 80%</small></td>
+                            <td><b>Phạm Thị Dung</b><br><small class="table-small-text">BHYT: 80%</small></td>
                             <td>Khám thường</td>
                             <td><b>500.000 đ</b></td>
                             <td>400.000 đ</td>
@@ -718,16 +718,16 @@
                 </button>
             </div>
             
-            <div class="block" style="margin-bottom: 20px;">
-                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                    <button class="btn" style="background: #e3f2fd; color: #0056b3;">Hôm nay</button>
-                    <button class="btn" style="background: #f5f5f5; color: #666;">Tuần này</button>
-                    <button class="btn" style="background: #f5f5f5; color: #666;">Tháng này</button>
-                    <button class="btn" style="background: #f5f5f5; color: #666;">Tất cả</button>
+            <div class="block block-mb-20">
+                <div class="filter-controls-simple">
+                    <button class="btn btn-primary-light">Hôm nay</button>
+                    <button class="btn btn-gray">Tuần này</button>
+                    <button class="btn btn-gray">Tháng này</button>
+                    <button class="btn btn-gray">Tất cả</button>
                 </div>
             </div>
 
-            <div class="block" style="padding: 0; box-shadow: none; background: transparent;">
+            <div class="block block-no-padding">
                 <table class="art-table">
                     <thead>
                         <tr>
@@ -747,7 +747,7 @@
                             <td><b>Nguyễn Văn An</b></td>
                             <td>BS. Trần Văn Hùng</td>
                             <td>Khoa Nội</td>
-                            <td>27/11/2025<br><small style="color: #999;">09:00</small></td>
+                            <td>27/11/2025<br><small class="table-small-text">09:00</small></td>
                             <td>Khám thường</td>
                             <td><span class="badge badge-success">Đã xác nhận</span></td>
                             <td>
@@ -760,7 +760,7 @@
                             <td><b>Trần Thị Bưởi</b></td>
                             <td>BS. Lê Thị Mai</td>
                             <td>Khoa Ngoại</td>
-                            <td>27/11/2025<br><small style="color: #999;">10:30</small></td>
+                            <td>27/11/2025<br><small class="table-small-text">10:30</small></td>
                             <td>Khám cấp cứu</td>
                             <td><span class="badge badge-warning">Chờ xác nhận</span></td>
                             <td>
@@ -773,7 +773,7 @@
                             <td><b>Lê Văn Cường</b></td>
                             <td>BS. Phạm Văn Đức</td>
                             <td>Khoa Nhi</td>
-                            <td>28/11/2025<br><small style="color: #999;">14:00</small></td>
+                            <td>28/11/2025<br><small class="table-small-text">14:00</small></td>
                             <td>Khám định kỳ</td>
                             <td><span class="badge badge-success">Đã xác nhận</span></td>
                             <td>
@@ -786,7 +786,7 @@
                             <td><b>Phạm Thị Dung</b></td>
                             <td>BS. Nguyễn Văn Nam</td>
                             <td>Khoa Sản</td>
-                            <td>28/11/2025<br><small style="color: #999;">08:00</small></td>
+                            <td>28/11/2025<br><small class="table-small-text">08:00</small></td>
                             <td>Khám thường</td>
                             <td><span class="badge badge-danger">Đã hủy</span></td>
                             <td>
@@ -807,16 +807,16 @@
                 </button>
             </div>
 
-            <div class="block" style="margin-bottom: 20px;">
-                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                    <button class="btn" style="background: #e3f2fd; color: #0056b3;">Tất cả</button>
-                    <button class="btn" style="background: #f5f5f5; color: #666;">Bác sĩ</button>
-                    <button class="btn" style="background: #f5f5f5; color: #666;">Y tá</button>
-                    <button class="btn" style="background: #f5f5f5; color: #666;">Nhân viên</button>
+            <div class="block block-mb-20">
+                <div class="filter-controls-simple">
+                    <button class="btn btn-primary-light">Tất cả</button>
+                    <button class="btn btn-gray">Bác sĩ</button>
+                    <button class="btn btn-gray">Y tá</button>
+                    <button class="btn btn-gray">Nhân viên</button>
                 </div>
             </div>
 
-            <div class="block" style="padding: 0; box-shadow: none; background: transparent;">
+            <div class="block block-no-padding">
                 <table class="art-table">
                     <thead>
                         <tr>
@@ -904,8 +904,8 @@
         <div id="report" class="page hidden fade-in">
             <div class="art-header">
                 <h4><i class="ti-bar-chart"></i> Báo cáo & Thống kê</h4>
-                <div style="display: flex; gap: 10px;">
-                    <select style="padding: 8px 15px; border: 1px solid #ddd; border-radius: 6px;">
+                <div class="header-actions">
+                    <select class="input-default">
                         <option>Tháng 11/2025</option>
                         <option>Tháng 10/2025</option>
                         <option>Tháng 9/2025</option>
@@ -916,7 +916,7 @@
                 </div>
             </div>
 
-            <div class="dashboard" style="margin-bottom: 30px;">
+            <div class="dashboard dashboard-mb-30">
                 <div class="card blue">
                     <i class="ti-bar-chart"></i>
                     <p>Tổng số ca khám</p>
@@ -939,9 +939,9 @@
                 </div>
             </div>
 
-            <div class="block" style="margin-bottom: 30px;">
+            <div class="block block-mb-30">
                 <h4><i class="ti-layout-grid2"></i> Báo cáo Công suất Giường bệnh</h4>
-                <div style="margin-top: 20px;">
+                <div class="mt-20">
                     <table class="art-table">
                         <thead>
                             <tr>
@@ -959,7 +959,7 @@
                                 <td>50</td>
                                 <td>35</td>
                                 <td>15</td>
-                                <td><b style="color: #ffc107;">70%</b></td>
+                                <td><b class="text-warning">70%</b></td>
                                 <td>5.2 ngày</td>
                             </tr>
                             <tr>
@@ -967,7 +967,7 @@
                                 <td>40</td>
                                 <td>28</td>
                                 <td>12</td>
-                                <td><b style="color: #ffc107;">70%</b></td>
+                                <td><b class="text-warning">70%</b></td>
                                 <td>6.8 ngày</td>
                             </tr>
                             <tr>
@@ -975,7 +975,7 @@
                                 <td>30</td>
                                 <td>22</td>
                                 <td>8</td>
-                                <td><b style="color: #ffc107;">73%</b></td>
+                                <td><b class="text-warning">73%</b></td>
                                 <td>4.5 ngày</td>
                             </tr>
                             <tr>
@@ -983,15 +983,15 @@
                                 <td>25</td>
                                 <td>18</td>
                                 <td>7</td>
-                                <td><b style="color: #ffc107;">72%</b></td>
+                                <td><b class="text-warning">72%</b></td>
                                 <td>3.2 ngày</td>
                             </tr>
-                            <tr style="background: #f8f9fa; font-weight: 600;">
+                            <tr class="report-total-row">
                                 <td><b>TỔNG CỘNG</b></td>
                                 <td>145</td>
                                 <td>103</td>
                                 <td>42</td>
-                                <td><b style="color: #0056b3;">71%</b></td>
+                                <td><b class="text-primary">71%</b></td>
                                 <td>5.0 ngày</td>
                             </tr>
                         </tbody>
@@ -999,9 +999,9 @@
                 </div>
             </div>
 
-            <div class="block" style="margin-bottom: 30px;">
+            <div class="block block-mb-30">
                 <h4><i class="ti-money"></i> Báo cáo Chi phí Điều trị</h4>
-                <div style="margin-top: 20px;">
+                <div class="mt-20">
                     <table class="art-table">
                         <thead>
                             <tr>
@@ -1046,7 +1046,7 @@
                                 <td>352.000.000 đ (80%)</td>
                                 <td>88.000.000 đ (20%)</td>
                             </tr>
-                            <tr style="background: #f8f9fa; font-weight: 600;">
+                            <tr class="report-total-row">
                                 <td><b>TỔNG CỘNG</b></td>
                                 <td>1.245</td>
                                 <td><b>2.105.000.000 đ</b></td>
@@ -1059,23 +1059,23 @@
                 </div>
             </div>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 30px;">
+            <div class="d-grid grid-2-col gap-25 mb-30">
                 <div class="block">
                     <h4><i class="ti-bar-chart-alt"></i> Thống kê theo khoa</h4>
-                    <div style="margin-top: 20px;">
-                        <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #eee;">
+                    <div class="mt-20">
+                        <div class="stats-list-item">
                             <span>Khoa Nội</span>
                             <b>425 ca</b>
                         </div>
-                        <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #eee;">
+                        <div class="stats-list-item">
                             <span>Khoa Ngoại</span>
                             <b>320 ca</b>
                         </div>
-                        <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #eee;">
+                        <div class="stats-list-item">
                             <span>Khoa Nhi</span>
                             <b>280 ca</b>
                         </div>
-                        <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #eee;">
+                        <div class="stats-list-item">
                             <span>Khoa Sản</span>
                             <b>220 ca</b>
                         </div>
@@ -1084,20 +1084,20 @@
 
                 <div class="block">
                     <h4><i class="ti-pie-chart"></i> Tỷ lệ loại khám</h4>
-                    <div style="margin-top: 20px;">
-                        <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #eee;">
+                    <div class="mt-20">
+                        <div class="stats-list-item">
                             <span>Khám thường</span>
                             <b>65%</b>
                         </div>
-                        <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #eee;">
+                        <div class="stats-list-item">
                             <span>Khám cấp cứu</span>
                             <b>20%</b>
                         </div>
-                        <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #eee;">
+                        <div class="stats-list-item">
                             <span>Khám định kỳ</span>
                             <b>10%</b>
                         </div>
-                        <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #eee;">
+                        <div class="stats-list-item">
                             <span>Khác</span>
                             <b>5%</b>
                         </div>
@@ -1107,9 +1107,9 @@
 
             <div class="block">
                 <h4><i class="ti-line-chart"></i> Biểu đồ doanh thu (7 ngày gần nhất)</h4>
-                <div style="padding: 30px; text-align: center; color: #999; background: #f8f9fa; border-radius: 8px; margin-top: 20px;">
-                    <i class="ti-bar-chart" style="font-size: 48px; opacity: 0.3;"></i>
-                    <p style="margin-top: 15px;">Biểu đồ sẽ được tích hợp sau</p>
+                <div class="chart-placeholder">
+                    <i class="ti-bar-chart chart-placeholder-icon"></i>
+                    <p class="chart-placeholder-text">Biểu đồ sẽ được tích hợp sau</p>
                 </div>
             </div>
         </div>
@@ -1121,24 +1121,25 @@
 
             <div class="block">
                 <h4><i class="ti-user"></i> Thông tin Bệnh viện</h4>
-                <div style="margin-top: 20px;">
-                    <div style="margin-bottom: 15px;">
-                        <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #555;">Tên bệnh viện</label>
-                        <input type="text" value="Bệnh viện Đa khoa Trung ương" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                <div class="mt-20">
+                    <div class="settings-input-group">
+                        <label class="settings-label">Tên bệnh viện</label>
+                        <input type="text" value="Bệnh viện Đa khoa Trung ương" class="input-full">
                     </div>
-                    <div style="margin-bottom: 15px;">
-                        <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #555;">Địa chỉ</label>
-                        <input type="text" value="123 Đường ABC, Quận XYZ, TP. Hà Nội" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                    <div class="settings-input-group">
+                        <label class="settings-label">Địa chỉ</label>
+                        <input type="text" value="123 Đường ABC, Quận XYZ, TP. Hà Nội" class="input-full">
                     </div>
-                    <div style="margin-bottom: 15px;">
-                        <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #555;">Số điện thoại</label>
-                        <input type="text" value="024.1234.5678" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                    <div class="settings-input-group">
+                        <label class="settings-label">Số điện thoại</label>
+                        <input type="text" value="024.1234.5678" class="input-full">
                     </div>
-                    <div style="margin-bottom: 15px;">
-                        <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #555;">Email</label>
-                        <input type="email" value="info@benhvien.vn" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                    <div class="settings-input-group">
+                        <label class="settings-label">Email</label>
+                        <input type="email" value="info@benhvien.vn" class="input-full">
                     </div>
-                    <button class="btn add-btn" style="margin-top: 10px;">
+                    <div class="settings-button-group">
+                        <button class="btn add-btn">
                         <i class="ti-check"></i> Lưu thay đổi
                     </button>
                 </div>
@@ -1146,26 +1147,27 @@
 
             <div class="block">
                 <h4><i class="ti-lock"></i> Bảo mật & Quyền truy cập</h4>
-                <div style="margin-top: 20px;">
-                    <div style="margin-bottom: 15px;">
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
-                            <input type="checkbox" checked style="width: 18px; height: 18px;">
+                <div class="mt-20">
+                    <div class="settings-input-group">
+                        <label class="settings-checkbox-label">
+                            <input type="checkbox" checked class="settings-checkbox">
                             <span>Yêu cầu xác thực 2 lớp cho Admin</span>
                         </label>
                     </div>
-                    <div style="margin-bottom: 15px;">
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
-                            <input type="checkbox" checked style="width: 18px; height: 18px;">
+                    <div class="settings-input-group">
+                        <label class="settings-checkbox-label">
+                            <input type="checkbox" checked class="settings-checkbox">
                             <span>Ghi log tất cả thao tác quan trọng</span>
                         </label>
                     </div>
-                    <div style="margin-bottom: 15px;">
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
-                            <input type="checkbox" style="width: 18px; height: 18px;">
+                    <div class="settings-input-group">
+                        <label class="settings-checkbox-label">
+                            <input type="checkbox" class="settings-checkbox">
                             <span>Cho phép đăng nhập từ xa</span>
                         </label>
                     </div>
-                    <button class="btn add-btn" style="margin-top: 10px;">
+                    <div class="settings-button-group">
+                        <button class="btn add-btn">
                         <i class="ti-check"></i> Lưu cài đặt
                     </button>
                 </div>
@@ -1173,35 +1175,36 @@
 
             <div class="block">
                 <h4><i class="ti-bell"></i> Thông báo & Cảnh báo</h4>
-                <div style="margin-top: 20px;">
-                    <div style="margin-bottom: 15px;">
-                        <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #555;">Email nhận cảnh báo</label>
-                        <input type="email" value="admin@benhvien.vn" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                <div class="mt-20">
+                    <div class="settings-input-group">
+                        <label class="settings-label">Email nhận cảnh báo</label>
+                        <input type="email" value="admin@benhvien.vn" class="input-full">
                     </div>
-                    <div style="margin-bottom: 15px;">
-                        <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #555;">Số điện thoại khẩn cấp</label>
-                        <input type="text" value="0901234567" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                    <div class="settings-input-group">
+                        <label class="settings-label">Số điện thoại khẩn cấp</label>
+                        <input type="text" value="0901234567" class="input-full">
                     </div>
-                    <div style="margin-bottom: 15px;">
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
-                            <input type="checkbox" checked style="width: 18px; height: 18px;">
+                    <div class="settings-input-group">
+                        <label class="settings-checkbox-label">
+                            <input type="checkbox" checked class="settings-checkbox">
                             <span>Gửi email cảnh báo khi có ca cấp cứu</span>
                         </label>
                     </div>
-                    <button class="btn add-btn" style="margin-top: 10px;">
+                    <div class="settings-button-group">
+                        <button class="btn add-btn">
                         <i class="ti-check"></i> Lưu cài đặt
                     </button>
                 </div>
             </div>
 
-            <div class="block" style="background: #fff3cd; border-left: 4px solid #ffc107;">
-                <h4 style="color: #856404;"><i class="ti-alert"></i> Sao lưu & Khôi phục</h4>
-                <p style="color: #856404; margin-top: 10px;">Đảm bảo dữ liệu được sao lưu định kỳ để tránh mất mát thông tin.</p>
-                <div style="margin-top: 15px; display: flex; gap: 10px;">
-                    <button class="btn" style="background: #ffc107; color: #333;">
+            <div class="block bg-warning-light border-left-warning">
+                <h4 class="text-yellow-dark"><i class="ti-alert"></i> Sao lưu & Khôi phục</h4>
+                <p class="text-yellow-dark mt-15">Đảm bảo dữ liệu được sao lưu định kỳ để tránh mất mát thông tin.</p>
+                <div class="d-flex gap-10 mt-15">
+                    <button class="btn btn-warning">
                         <i class="ti-download"></i> Sao lưu ngay
                     </button>
-                    <button class="btn" style="background: #f5f5f5; color: #666;">
+                    <button class="btn btn-gray">
                         <i class="ti-upload"></i> Khôi phục từ file
                     </button>
                 </div>

@@ -34,11 +34,15 @@ function showSection(id, element) {
  * Hàm xử lý đăng xuất
  */
 function logout() {
-    if(confirm('Bạn có chắc chắn muốn đăng xuất khỏi hệ thống quản trị?')) {
-        // Xử lý logic đăng xuất ở đây (xóa token, session...)
-        alert('Đã đăng xuất thành công!');
-        // Chuyển hướng về trang chủ hoặc trang đăng nhập
-        window.location.href = '/index.html'; 
+    if(confirm('Bạn có chắc chắn muốn đăng xuất khỏi hệ thống?')) {
+        // Gọi hàm logout từ auth.js
+        if (typeof logoutUser === 'function') {
+            logoutUser();
+        } else {
+            sessionStorage.removeItem('currentUser');
+            alert('Đã đăng xuất thành công!');
+            window.location.href = 'login.html';
+        }
     }
 }
 
@@ -48,6 +52,64 @@ function logout() {
 function openPatientForm() {
     // Sau này bạn có thể thay bằng code mở Modal (Popup)
     alert("Chức năng đang phát triển: Mở form tiếp nhận bệnh nhân mới.");
+}
+
+/**
+ * Hàm mở form đặt lịch hẹn
+ */
+function openAppointmentForm() {
+    alert("Chức năng đang phát triển: Mở form đặt lịch hẹn mới.");
+}
+
+/**
+ * Hàm mở form tạo hồ sơ bệnh án
+ */
+function openRecordForm() {
+    alert("Chức năng đang phát triển: Mở form tạo hồ sơ bệnh án mới.");
+}
+
+/**
+ * Hàm mở form thêm nhân sự
+ */
+function openDoctorForm() {
+    alert("Chức năng đang phát triển: Mở form thêm nhân sự y tế.");
+}
+
+/**
+ * Hàm mở form tạo hóa đơn
+ */
+function openBillingForm() {
+    alert("Chức năng đang phát triển: Mở form tạo hóa đơn viện phí.");
+}
+
+/**
+ * Hàm mở form quản lý giường bệnh
+ */
+function openBedForm() {
+    alert("Chức năng đang phát triển: Mở form thêm giường bệnh/khoa phòng.");
+}
+
+/**
+ * Hàm lọc giường bệnh theo khoa
+ */
+function filterBeds() {
+    const department = document.getElementById('departmentFilter').value;
+    // Logic lọc giường bệnh theo khoa
+    console.log("Lọc giường bệnh theo khoa:", department);
+}
+
+/**
+ * Hàm mở form đặt lịch phẫu thuật
+ */
+function openSurgeryForm() {
+    alert("Chức năng đang phát triển: Mở form đặt lịch phẫu thuật/thủ thuật.");
+}
+
+/**
+ * Hàm xem chi tiết hồ sơ bệnh án
+ */
+function viewRecordDetail(recordId) {
+    alert("Chức năng đang phát triển: Xem chi tiết hồ sơ bệnh án " + recordId);
 }
 
 // (Tùy chọn) Tự động kích hoạt tab đầu tiên khi tải trang nếu cần
