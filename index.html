@@ -343,5 +343,54 @@
     </footer>
 
     <script src="./js/index.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #0056b3 0%, #004494 100%);
+        margin: 0;
+      }
+      .welcome-container {
+        text-align: center;
+        color: white;
+        padding: 40px;
+      }
+      .welcome-container h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+      .welcome-container h2 {
+        font-size: 20px;
+        margin-bottom: 40px;
+        opacity: 0.9;
+      }
+      .btn-login {
+        display: inline-block;
+        padding: 15px 40px;
+        background: white;
+        color: #0056b3;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 18px;
+        transition: all 0.3s;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      }
+      .btn-login:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="welcome-container">
+      <h1>🏥 Bệnh Viện Đa Khoa</h1>
+      <h2>Chào mừng đến với hệ thống quản lý bệnh viện đa khoa</h2>
+      <a href="Pages/login.html" class="btn-login">Đăng nhập hệ thống</a>
+    </div>
   </body>
 </html>
