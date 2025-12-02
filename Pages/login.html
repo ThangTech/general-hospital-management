@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - Bệnh Viện Đa Khoa</title>
+    
+    <link rel="stylesheet" href="../icon/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2><i class="ti-pulse"></i> Bệnh Viện Đa Khoa</h2>
+            <p>Hệ thống quản lý bệnh viện</p>
+            
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>Tên đăng nhập</label>
+                    <input type="text" id="username" required placeholder="Nhập tên đăng nhập">
+                </div>
+                
+                <div class="form-group">
+                    <label>Mật khẩu</label>
+                    <input type="password" id="password" required placeholder="Nhập mật khẩu">
+                </div>
+                
+                <div class="form-group">
+                    <label>Vai trò</label>
+                    <select id="role" required>
+                        <option value="">-- Chọn vai trò --</option>
+                        <option value="admin">Quản trị viên (Admin)</option>
+                        <option value="doctor">Bác sĩ</option>
+                        <option value="nurse">Y tá</option>
+                        <option value="caregiver">Điều dưỡng</option>
+                        <option value="accountant">Kế toán</option>
+                        <option value="patient">Bệnh nhân</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn-login" id="loginBtn">
+                    <i class="ti-lock"></i> <span id="loginBtnText">Đăng nhập</span>
+                </button>
+            </form>
+            
+            <div class="demo-accounts">
+                <h4><i class="ti-info"></i> Tài khoản demo (click để chọn):</h4>
+                <p onclick="fillLogin('admin', 'admin', 'admin')" class="demo-account-item">
+                    <b>Admin:</b> admin / admin
+                </p>
+                <p onclick="fillLogin('doctor', 'doctor', 'doctor')" class="demo-account-item">
+                    <b>Bác sĩ:</b> doctor / doctor
+                </p>
+                <p onclick="fillLogin('nurse', 'nurse', 'nurse')" class="demo-account-item">
+                    <b>Y tá:</b> nurse / nurse
+                </p>
+                <p onclick="fillLogin('accountant', 'accountant', 'accountant')" class="demo-account-item">
+                    <b>Kế toán:</b> accountant / accountant
+                </p>
+                <p onclick="fillLogin('patient', 'patient', 'patient')" class="demo-account-item">
+                    <b>Bệnh nhân:</b> patient / patient
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/auth.js"></script>
+    <script>
+        // Kiểm tra nếu đã đăng nhập thì tự động redirect
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentUser = sessionStorage.getItem('currentUser');
+            if (currentUser) {
+                // Đã đăng nhập, chuyển đến trang admin
+                window.location.href = 'admin.html';
+            }
+        });
+        
+        function fillLogin(username, password, role) {
+            document.getElementById('username').value = username;
+            document.getElementById('password').value = password;
+            document.getElementById('role').value = role;
+        }
+        
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const role = document.getElementById('role').value;
+            const loginBtn = document.getElementById('loginBtn');
+            const loginBtnText = document.getElementById('loginBtnText');
+            
+            // Kiểm tra input
+            if (!username || !password || !role) {
+                alert('Vui lòng điền đầy đủ thông tin đăng nhập!');
+                return;
+            }
+            
+            // Disable button và hiển thị loading
+            loginBtn.disabled = true;
+            loginBtnText.textContent = 'Đang đăng nhập...';
+            
+            // Gọi hàm login từ auth.js
+            if (typeof login === 'function' && login(username, password, role)) {
+                // Đảm bảo sessionStorage đã được set trước khi redirect
+                // Thêm một chút delay để tránh race condition
+                setTimeout(function() {
+                    window.location.href = 'admin.html';
+                }, 100);
+            } else {
+                // Khôi phục button nếu đăng nhập thất bại
+                loginBtn.disabled = false;
+                loginBtnText.textContent = 'Đăng nhập';
+                alert('Đăng nhập thất bại! Vui lòng kiểm tra lại thông tin.');
+            }
+        }
+    </script>
+</body>
+</html>
+
