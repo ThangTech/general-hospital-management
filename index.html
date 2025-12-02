@@ -4,54 +4,343 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quản lý bệnh viện đa khoa</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-      body {
-        font-family: "Roboto", sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        background: linear-gradient(135deg, #0056b3 0%, #004494 100%);
-        margin: 0;
-      }
-      .welcome-container {
-        text-align: center;
-        color: white;
-        padding: 40px;
-      }
-      .welcome-container h1 {
-        font-size: 36px;
-        margin-bottom: 20px;
-      }
-      .welcome-container h2 {
-        font-size: 20px;
-        margin-bottom: 40px;
-        opacity: 0.9;
-      }
-      .btn-login {
-        display: inline-block;
-        padding: 15px 40px;
-        background: white;
-        color: #0056b3;
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: 600;
-        font-size: 18px;
-        transition: all 0.3s;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      }
-      .btn-login:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-      }
-    </style>
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <div class="welcome-container">
-      <h1>🏥 Bệnh Viện Đa Khoa</h1>
-      <h2>Chào mừng đến với hệ thống quản lý bệnh viện đa khoa</h2>
-      <a href="Pages/login.html" class="btn-login">Đăng nhập hệ thống</a>
-    </div>
+    <header class="header">
+      <div class="header-top">
+        <div class="logo">
+          <img src="./images/logo.jpg" alt="Hospital Logo" />
+        </div>
+      </div>
+      <nav class="navbar">
+        <ul class="nav-list">
+          <li><a href="#" class="nav-list-item">Trang chủ</a></li>
+          <li><a href="#" class="nav-list-item">Giới thiệu</a></li>
+          <li><a href="#" class="nav-list-item">Khoa phòng</a></li>
+          <li><a href="#" class="nav-list-item">Dịch vụ</a></li>
+          <li><a href="#" class="nav-list-item">Bác sĩ</a></li>
+          <li><a href="#" class="nav-list-item">Đặt lịch hẹn</a></li>
+        </ul>
+      </nav>
+      <div class="header-btn">
+        <a href="#" class="btn btn-login">Đăng ký</a>
+        <a href="#" class="btn btn-register">Đăng nhập</a>
+      </div>
+    </header>
+
+    <!-- Hero Section - Slideshow -->
+    <section class="hero-section">
+      <div class="slideshow-container">
+        <div class="slide active">
+          <img src="./images/slide1.webp" alt="Bệnh viện hiện đại" />
+          <div class="slide-content">
+            <h1>Chăm sóc sức khỏe toàn diện</h1>
+            <p>Đội ngũ y bác sĩ chuyên nghiệp, trang thiết bị hiện đại</p>
+            <a href="#" class="btn-cta">Đặt lịch khám ngay</a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="./images/slide2.webp" alt="Phòng khám" />
+          <div class="slide-content">
+            <h1>Khám chữa bệnh chất lượng cao</h1>
+            <p>Phục vụ 24/7 với tinh thần tận tâm, chu đáo</p>
+            <a href="#" class="btn-cta">Đặt lịch khám ngay</a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="./images/slide3.webp" alt="Y tế" />
+          <div class="slide-content">
+            <h1>Hệ thống quản lý thông minh</h1>
+            <p>Đặt lịch dễ dàng, theo dõi hồ sơ bệnh án trực tuyến</p>
+            <a href="#" class="btn-cta">Đặt lịch khám ngay</a>
+          </div>
+        </div>
+        <button class="slide-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="slide-btn next" onclick="changeSlide(1)">&#10095;</button>
+        <div class="slide-dots">
+          <span class="dot active" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dịch vụ nổi bật -->
+    <section class="services-section">
+      <div class="container">
+        <h2 class="section-title">Dịch vụ nổi bật</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🏥</div>
+            <h3>Khám tổng quát</h3>
+            <p>Kiểm tra sức khỏe định kỳ với các xét nghiệm cần thiết</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">💊</div>
+            <h3>Cấp cứu 24/7</h3>
+            <p>Phòng cấp cứu hoạt động liên tục, sẵn sàng hỗ trợ</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🔬</div>
+            <h3>Xét nghiệm</h3>
+            <p>Hệ thống phòng lab hiện đại, kết quả nhanh chóng</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">📋</div>
+            <h3>Phẫu thuật</h3>
+            <p>Phòng mổ vô trùng, thiết bị tiên tiến nhất</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">👶</div>
+            <h3>Sản phụ khoa</h3>
+            <p>Chăm sóc mẹ và bé với đội ngũ chuyên khoa giàu kinh nghiệm</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🦷</div>
+            <h3>Nha khoa</h3>
+            <p>Điều trị răng miệng chuyên nghiệp, không đau</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Khoa & Phòng -->
+    <section class="wards-section">
+      <div class="container">
+        <h2 class="section-title">Khoa & Phòng</h2>
+        <div class="wards-grid">
+          <div class="ward-card">
+            <div class="ward-header">
+              <h3>Khoa Nội</h3>
+              <span class="ward-type">Nội khoa</span>
+            </div>
+            <div class="ward-info">
+              <p><strong>Số giường chuẩn:</strong> 45</p>
+              <p><strong>Giường trống:</strong> 12</p>
+            </div>
+            <a href="#" class="ward-btn">Xem chi tiết</a>
+          </div>
+          <div class="ward-card">
+            <div class="ward-header">
+              <h3>Khoa Ngoại</h3>
+              <span class="ward-type">Ngoại khoa</span>
+            </div>
+            <div class="ward-info">
+              <p><strong>Số giường chuẩn:</strong> 38</p>
+              <p><strong>Giường trống:</strong> 8</p>
+            </div>
+            <a href="#" class="ward-btn">Xem chi tiết</a>
+          </div>
+          <div class="ward-card">
+            <div class="ward-header">
+              <h3>Khoa Sản</h3>
+              <span class="ward-type">Sản phụ khoa</span>
+            </div>
+            <div class="ward-info">
+              <p><strong>Số giường chuẩn:</strong> 30</p>
+              <p><strong>Giường trống:</strong> 5</p>
+            </div>
+            <a href="#" class="ward-btn">Xem chi tiết</a>
+          </div>
+          <div class="ward-card">
+            <div class="ward-header">
+              <h3>Khoa Nhi</h3>
+              <span class="ward-type">Nhi khoa</span>
+            </div>
+            <div class="ward-info">
+              <p><strong>Số giường chuẩn:</strong> 35</p>
+              <p><strong>Giường trống:</strong> 10</p>
+            </div>
+            <a href="#" class="ward-btn">Xem chi tiết</a>
+          </div>
+          <div class="ward-card">
+            <div class="ward-header">
+              <h3>Khoa Cấp cứu</h3>
+              <span class="ward-type">Cấp cứu</span>
+            </div>
+            <div class="ward-info">
+              <p><strong>Số giường chuẩn:</strong> 20</p>
+              <p><strong>Giường trống:</strong> 3</p>
+            </div>
+            <a href="#" class="ward-btn">Xem chi tiết</a>
+          </div>
+          <div class="ward-card">
+            <div class="ward-header">
+              <h3>Khoa Tim mạch</h3>
+              <span class="ward-type">Chuyên khoa</span>
+            </div>
+            <div class="ward-info">
+              <p><strong>Số giường chuẩn:</strong> 25</p>
+              <p><strong>Giường trống:</strong> 7</p>
+            </div>
+            <a href="#" class="ward-btn">Xem chi tiết</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Đội ngũ bác sĩ -->
+    <section class="doctors-section">
+      <div class="container">
+        <h2 class="section-title">Đội ngũ bác sĩ</h2>
+        <div class="doctors-grid">
+          <div class="doctor-card">
+            <div class="doctor-avatar">
+              <img src="./images/example.png" alt="Bác sĩ" />
+            </div>
+            <h3>BS. Nguyễn Văn A</h3>
+            <p class="doctor-specialty">Chuyên khoa Nội</p>
+            <p class="doctor-contact">📞 0912.345.678</p>
+            <p class="doctor-contact">✉️ bs.nguyenvana@hospital.vn</p>
+          </div>
+          <div class="doctor-card">
+            <div class="doctor-avatar">
+              <img src="./images/example.png" alt="Bác sĩ" />
+            </div>
+            <h3>BS. Trần Thị B</h3>
+            <p class="doctor-specialty">Chuyên khoa Ngoại</p>
+            <p class="doctor-contact">📞 0912.345.679</p>
+            <p class="doctor-contact">✉️ bs.tranthib@hospital.vn</p>
+          </div>
+          <div class="doctor-card">
+            <div class="doctor-avatar">
+              <img src="./images/example.png" alt="Bác sĩ" />
+            </div>
+            <h3>BS. Lê Văn C</h3>
+            <p class="doctor-specialty">Chuyên khoa Sản</p>
+            <p class="doctor-contact">📞 0912.345.680</p>
+            <p class="doctor-contact">✉️ bs.levanc@hospital.vn</p>
+          </div>
+          <div class="doctor-card">
+            <div class="doctor-avatar">
+              <img src="./images/example.png" alt="Bác sĩ" />
+            </div>
+            <h3>BS. Phạm Thị D</h3>
+            <p class="doctor-specialty">Chuyên khoa Nhi</p>
+            <p class="doctor-contact">📞 0912.345.681</p>
+            <p class="doctor-contact">✉️ bs.phamthid@hospital.vn</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hệ thống giường bệnh -->
+    <section class="beds-section">
+      <div class="container">
+        <h2 class="section-title">Hệ thống giường bệnh</h2>
+        <div class="beds-stats">
+          <div class="stat-card">
+            <div class="stat-icon">🛏️</div>
+            <h3>193</h3>
+            <p>Tổng số giường</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">✅</div>
+            <h3>45</h3>
+            <p>Giường trống</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🏥</div>
+            <h3>148</h3>
+            <p>Đang sử dụng</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">📊</div>
+            <h3>76.7%</h3>
+            <p>Tỷ lệ sử dụng</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Đặt lịch khám -->
+    <section class="appointment-section">
+      <div class="container">
+        <div class="appointment-content">
+          <h2>Đặt lịch khám ngay hôm nay</h2>
+          <p>Chúng tôi cam kết mang đến dịch vụ chăm sóc sức khỏe tốt nhất với quy trình đặt lịch đơn giản, nhanh chóng</p>
+          <div class="appointment-steps">
+            <div class="step">
+              <span class="step-number">1</span>
+              <p>Chọn bác sĩ và thời gian</p>
+            </div>
+            <div class="step">
+              <span class="step-number">2</span>
+              <p>Điền thông tin cá nhân</p>
+            </div>
+            <div class="step">
+              <span class="step-number">3</span>
+              <p>Xác nhận lịch hẹn</p>
+            </div>
+          </div>
+          <a href="#" class="btn-appointment">Đặt lịch ngay</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <h3>Thông tin bệnh viện</h3>
+            <p>Bệnh viện Đa khoa chuyên nghiệp với hơn 20 năm kinh nghiệm trong lĩnh vực chăm sóc sức khỏe.</p>
+            <p>Cam kết mang đến dịch vụ y tế chất lượng cao, tận tâm với bệnh nhân.</p>
+          </div>
+          <div class="footer-col">
+            <h3>Liên hệ</h3>
+            <p>📍 123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh</p>
+            <p>📞 Hotline: 1900.123.456</p>
+            <p>✉️ Email: info@hospital.vn</p>
+            <p>🌐 Website: www.hospital.vn</p>
+          </div>
+          <div class="footer-col">
+            <h3>Điều hướng nhanh</h3>
+            <ul>
+              <li><a href="#">Trang chủ</a></li>
+              <li><a href="#">Giới thiệu</a></li>
+              <li><a href="#">Khoa phòng</a></li>
+              <li><a href="#">Dịch vụ</a></li>
+              <li><a href="#">Bác sĩ</a></li>
+              <li><a href="#">Đặt lịch hẹn</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Giờ làm việc</h3>
+            <p><strong>Thứ 2 - Thứ 6:</strong> 7:00 - 17:00</p>
+            <p><strong>Thứ 7:</strong> 7:00 - 12:00</p>
+            <p><strong>Chủ nhật:</strong> Nghỉ</p>
+            <p><strong>Cấp cứu:</strong> 24/7</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Bệnh viện Đa khoa. Bản quyền thuộc về bệnh viện.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/index.js"></script>
   </body>
 </html>
