@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Trị - Bệnh Viện Đa Khoa</title>
+    
+    <link rel="stylesheet" href="../icon/themify-icons/themify-icons.css">
+    
+    <link rel="stylesheet" href="../css/admin.css">
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/admin_click.js" defer></script>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2><i class="ti-pulse"></i> BV Đa Khoa</h2>
+            <span class="role-label">Admin Dashboard</span>
+        </div>
+        
+        <ul>
+            <li class="active" onclick="showSection('home', this)"><i class="ti-dashboard"></i> Tổng quan</li>
+            <li onclick="showSection('appointments', this)"><i class="ti-calendar"></i> Lịch khám & Hẹn</li>
+            <li onclick="showSection('patients', this)"><i class="ti-wheelchair"></i> Quản lý Bệnh nhân</li>
+            <li onclick="showSection('beds', this)"><i class="ti-layout-grid2"></i> Giường bệnh & Khoa phòng</li>
+            <li onclick="showSection('surgery', this)"><i class="ti-cut"></i> Lịch Phẫu thuật & Thủ thuật</li>
+            <li onclick="showSection('records', this)"><i class="ti-file"></i> Hồ sơ Bệnh án (EHR)</li>
+            <li onclick="showSection('doctors', this)"><i class="ti-user"></i> Nhân sự Y tế</li>
+            <li onclick="showSection('billing', this)"><i class="ti-money"></i> Viện phí & BHYT</li> 
+            <li onclick="showSection('report', this)"><i class="ti-bar-chart"></i> Báo cáo thống kê</li>
+            <li onclick="showSection('settings', this)"><i class="ti-settings"></i> Cấu hình</li>
+            
+            <li class="sidebar-link-ext">
+                <a href="/index.html" target="_blank">
+                    <i class="ti-world"></i> Xem Trang Chủ
+                </a>
+            </li>
+            <li onclick="logout()" class="logout-link"><i class="ti-power-off"></i> Đăng xuất</li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="topbar">
+            <div class="user-info">
+                <i class="ti-bell"></i>
+                <div class="admin-profile">
+                    <i class="ti-user"></i> <span>Quản trị viên</span>
+                </div>
+            </div>
+        </div>
+        
+        <div id="home" class="page fade-in">
+            <div class="header-section">
+                <h4>Tổng quan hoạt động</h4>
+                <p class="date-text">Hôm nay: 27/11/2025</p>
+            </div>
+
+            <div class="dashboard">
+                <div class="card blue">
+                    <i class="ti-wheelchair"></i>
+                    <p>Tổng Bệnh nhân</p>
+                    <h3>126</h3>
+                </div>
+                <div class="card green">
+                    <i class="ti-calendar"></i>
+                    <p>Lịch hẹn Hôm nay</p>
+                    <h3>89</h3>
+                </div>
+                <div class="card orange">
+                    <i class="ti-user"></i>
+                    <p>Bác sĩ trực</p>
+                    <h3>15</h3>
+                </div>
+                <div class="card red">
+                    <i class="ti-money"></i>
+                    <p>Doanh thu (Ngày)</p>
+                    <h3>45 Tr</h3>
+                </div>
+            </div>
+
+            <div class="block">
+                <h4><i class="ti-time"></i> Hoạt động gần đây</h4>
+                <div class="activity">
+                    <div><i class="ti-plus"></i> Tiếp nhận bệnh nhân <b>Nguyễn Văn A</b> vào Khoa Nội</div>
+                    <div><i class="ti-check-box"></i> Bác sĩ Hùng hoàn thành khám mã <b>#PK102</b></div>
+                    <div><i class="ti-user"></i> Bệnh nhân mới <b>Trần Thị B</b> đăng ký trực tuyến</div>
+                    <div><i class="ti-pencil-alt"></i> Cập nhật bệnh án hồ sơ <b>Lê Văn C</b></div>
+                </div>
+            </div>
+
+            <div class="block">
+                <h4><i class="ti-bar-chart"></i> Thống kê nhanh</h4>
+                <div class="stats">
+                    <div class="stat"><p>Đã thu phí</p><h3>12.500.000 đ</h3></div>
+                    <div class="stat"><p>Ca cấp cứu</p><h3>5</h3></div>
+                    <div class="stat"><p>Xuất viện</p><h3>8</h3></div>
+                </div>
+            </div>
+
+            <div class="block">
+                <h4><i class="ti-notepad"></i> Ghi chú trực ban</h4>
+                <textarea placeholder="Nhập ghi chú giao ban hoặc nhắc nhở công việc..."></textarea>
+            </div>
+        </div>
+        
+        <div id="patients" class="page hidden fade-in">
+            <div class="art-header"> 
+                <h4><i class="ti-wheelchair"></i> Danh sách Bệnh nhân</h4>
+                <button class="btn add-btn" onclick="openPatientForm()">
+                    <i class="ti-plus"></i> Tiếp nhận Mới
+                </button>
+            </div>
+            <div class="block block-no-padding">
+                <table class="art-table"> 
+                    <thead>
+                        <tr>
+                            <th>Mã BN</th>
+                            <th>Họ tên</th>
+                            <th>Năm sinh</th>
+                            <th>Bệnh lý chính</th>
+                            <th>Phòng</th>
+                            <th>Trạng thái</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BN001</td>
+                            <td><b>Nguyễn Văn An</b></td>
+                            <td>1990</td>
+                            <td>Viêm phổi cấp</td>
+                            <td>P.301</td>
+                            <td><span class="badge badge-danger">Nội trú</span></td>
+                            <td>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                                <button class="btn btn-detail"><i class="ti-file"></i> Hồ sơ</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>BN002</td>
+                            <td><b>Trần Thị Bưởi</b></td>
+                            <td>1985</td>
+                            <td>Sốt xuất huyết</td>
+                            <td>P.302</td>
+                            <td><span class="badge badge-warning">Chờ xét nghiệm</span></td>
+                            <td>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                                <button class="btn btn-detail"><i class="ti-file"></i> Hồ sơ</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>BN003</td>
+                            <td><b>Lê Văn Cường</b></td>
+                            <td>2000</td>
+                            <td>Gãy xương kín</td>
+                            <td>P.405</td>
+                            <td><span class="badge badge-success">Đã ổn định</span></td>
+                            <td>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                                <button class="btn btn-detail"><i class="ti-file"></i> Hồ sơ</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="beds" class="page hidden fade-in">
+            <div class="art-header">
+                <h4><i class="ti-layout-grid2"></i> Quản lý Giường bệnh & Khoa phòng</h4>
+                <button class="btn add-btn" onclick="openBedForm()">
+                    <i class="ti-plus"></i> Thêm giường/Khoa
+                </button>
+            </div>
+
+            <div class="block block-mb-20">
+                <div class="filter-controls">
+                    <select id="departmentFilter" onchange="filterBeds()" class="input-default">
+                        <option value="all">Tất cả khoa</option>
+                        <option value="khoa-noi">Khoa Nội</option>
+                        <option value="khoa-ngoai">Khoa Ngoại</option>
+                        <option value="khoa-nhi">Khoa Nhi</option>
+                        <option value="khoa-san">Khoa Sản</option>
+                        <option value="khoa-cap-cuu">Khoa Cấp cứu</option>
+                    </select>
+                    <button class="btn btn-primary-light">Tất cả</button>
+                    <button class="btn btn-gray">Trống</button>
+                    <button class="btn btn-gray">Đang sử dụng</button>
+                </div>
+            </div>
+
+            <div class="dept-stats-grid">
+                <div class="block">
+                    <h4><i class="ti-home"></i> Khoa Nội</h4>
+                    <div class="dept-stats-container">
+                        <div class="stats-row">
+                            <span>Tổng giường:</span>
+                            <b>50</b>
+                        </div>
+                        <div class="stats-row">
+                            <span>Đang sử dụng:</span>
+                            <b class="text-danger">35</b>
+                        </div>
+                        <div class="stats-row">
+                            <span>Trống:</span>
+                            <b class="text-success">15</b>
+                        </div>
+                        <div class="stats-row-last">
+                            <span>Công suất:</span>
+                            <b>70%</b>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <h4><i class="ti-home"></i> Khoa Ngoại</h4>
+                    <div class="dept-stats-container">
+                        <div class="stats-row">
+                            <span>Tổng giường:</span>
+                            <b>40</b>
+                        </div>
+                        <div class="stats-row">
+                            <span>Đang sử dụng:</span>
+                            <b class="text-danger">28</b>
+                        </div>
+                        <div class="stats-row">
+                            <span>Trống:</span>
+                            <b class="text-success">12</b>
+                        </div>
+                        <div class="stats-row-last">
+                            <span>Công suất:</span>
+                            <b>70%</b>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <h4><i class="ti-home"></i> Khoa Nhi</h4>
+                    <div class="dept-stats-container">
+                        <div class="stats-row">
+                            <span>Tổng giường:</span>
+                            <b>30</b>
+                        </div>
+                        <div class="stats-row">
+                            <span>Đang sử dụng:</span>
+                            <b class="text-danger">22</b>
+                        </div>
+                        <div class="stats-row">
+                            <span>Trống:</span>
+                            <b class="text-success">8</b>
+                        </div>
+                        <div class="stats-row-last">
+                            <span>Công suất:</span>
+                            <b>73%</b>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <h4><i class="ti-home"></i> Khoa Sản</h4>
+                    <div class="dept-stats-container">
+                        <div class="stats-row">
+                            <span>Tổng giường:</span>
+                            <b>25</b>
+                        </div>
+                        <div class="stats-row">
+                            <span>Đang sử dụng:</span>
+                            <b class="text-danger">18</b>
+                        </div>
+                        <div class="stats-row">
+                            <span>Trống:</span>
+                            <b class="text-success">7</b>
+                        </div>
+                        <div class="stats-row-last">
+                            <span>Công suất:</span>
+                            <b>72%</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block block-no-padding">
+                <table class="art-table">
+                    <thead>
+                        <tr>
+                            <th>Mã giường</th>
+                            <th>Khoa/Phòng</th>
+                            <th>Số phòng</th>
+                            <th>Bệnh nhân</th>
+                            <th>Ngày nhập</th>
+                            <th>Trạng thái</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GB001</td>
+                            <td>Khoa Nội</td>
+                            <td>P.301</td>
+                            <td><b>Nguyễn Văn An</b><br><small class="table-small-text">BN001</small></td>
+                            <td>25/11/2025</td>
+                            <td><span class="badge badge-danger">Đang sử dụng</span></td>
+                            <td>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                                <button class="btn btn-detail"><i class="ti-eye"></i> Chi tiết</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>GB002</td>
+                            <td>Khoa Nội</td>
+                            <td>P.301</td>
+                            <td><b>Trần Thị Bưởi</b><br><small class="table-small-text">BN002</small></td>
+                            <td>20/11/2025</td>
+                            <td><span class="badge badge-danger">Đang sử dụng</span></td>
+                            <td>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                                <button class="btn btn-detail"><i class="ti-eye"></i> Chi tiết</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>GB003</td>
+                            <td>Khoa Ngoại</td>
+                            <td>P.405</td>
+                            <td><b>Lê Văn Cường</b><br><small class="table-small-text">BN003</small></td>
+                            <td>15/11/2025</td>
+                            <td><span class="badge badge-danger">Đang sử dụng</span></td>
+                            <td>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                                <button class="btn btn-detail"><i class="ti-eye"></i> Chi tiết</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>GB004</td>
+                            <td>Khoa Nội</td>
+                            <td>P.302</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td><span class="badge badge-success">Trống</span></td>
+                            <td>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                                <button class="btn add-btn btn-small"><i class="ti-plus"></i> Phân bổ</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>GB005</td>
+                            <td>Khoa Nhi</td>
+                            <td>P.201</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td><span class="badge badge-success">Trống</span></td>
+                            <td>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                                <button class="btn add-btn btn-small"><i class="ti-plus"></i> Phân bổ</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="surgery" class="page hidden fade-in">
+            <div class="art-header">
+                <h4><i class="ti-cut"></i> Lịch Phẫu thuật & Thủ thuật</h4>
+                <button class="btn add-btn" onclick="openSurgeryForm()">
+                    <i class="ti-plus"></i> Đặt lịch mổ
+                </button>
+            </div>
+
+            <div class="block block-mb-20">
+                <div class="filter-controls-simple">
+                    <button class="btn btn-primary-light">Hôm nay</button>
+                    <button class="btn btn-gray">Tuần này</button>
+                    <button class="btn btn-gray">Tháng này</button>
+                    <select class="input-default">
+                        <option>Tất cả phòng mổ</option>
+                        <option>Phòng mổ 1</option>
+                        <option>Phòng mổ 2</option>
+                        <option>Phòng mổ 3</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="dashboard dashboard-mb-30">
+                <div class="card blue">
+                    <i class="ti-calendar"></i>
+                    <p>Ca mổ hôm nay</p>
+                    <h3>8</h3>
+                </div>
+                <div class="card green">
+                    <i class="ti-check-box"></i>
+                    <p>Đã hoàn thành</p>
+                    <h3>5</h3>
+                </div>
+                <div class="card orange">
+                    <i class="ti-time"></i>
+                    <p>Đang thực hiện</p>
+                    <h3>2</h3>
+                </div>
+                <div class="card red">
+                    <i class="ti-alert"></i>
+                    <p>Chờ thực hiện</p>
+                    <h3>1</h3>
+                </div>
+            </div>
+
+            <div class="block block-no-padding">
+                <table class="art-table">
+                    <thead>
+                        <tr>
+                            <th>Mã ca mổ</th>
+                            <th>Bệnh nhân</th>
+                            <th>Loại phẫu thuật</th>
+                            <th>Bác sĩ phẫu thuật</th>
+                            <th>Phòng mổ</th>
+                            <th>Ngày giờ</th>
+                            <th>Thời gian dự kiến</th>
+                            <th>Trạng thái</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CM001</td>
+                            <td><b>Nguyễn Văn An</b><br><small class="table-small-text">BN001</small></td>
+                            <td>Phẫu thuật nội soi</td>
+                            <td>BS. Trần Văn Hùng</td>
+                            <td>Phòng mổ 1</td>
+                            <td>27/11/2025<br><small class="table-small-text">08:00</small></td>
+                            <td>2 giờ</td>
+                            <td><span class="badge badge-success">Đã hoàn thành</span></td>
+                            <td>
+                                <button class="btn btn-detail"><i class="ti-file"></i> Chi tiết</button>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CM002</td>
+                            <td><b>Trần Thị Bưởi</b><br><small class="table-small-text">BN002</small></td>
+                            <td>Phẫu thuật mở</td>
+                            <td>BS. Lê Thị Mai</td>
+                            <td>Phòng mổ 2</td>
+                            <td>27/11/2025<br><small class="table-small-text">10:30</small></td>
+                            <td>3 giờ</td>
+                            <td><span class="badge badge-warning">Đang thực hiện</span></td>
+                            <td>
+                                <button class="btn btn-detail"><i class="ti-file"></i> Chi tiết</button>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CM003</td>
+                            <td><b>Lê Văn Cường</b><br><small class="table-small-text">BN003</small></td>
+                            <td>Thủ thuật nhỏ</td>
+                            <td>BS. Phạm Văn Đức</td>
+                            <td>Phòng mổ 3</td>
+                            <td>27/11/2025<br><small class="table-small-text">14:00</small></td>
+                            <td>1 giờ</td>
+                            <td><span class="badge badge-danger">Chờ thực hiện</span></td>
+                            <td>
+                                <button class="btn btn-detail"><i class="ti-file"></i> Chi tiết</button>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CM004</td>
+                            <td><b>Phạm Thị Dung</b><br><small class="table-small-text">BN004</small></td>
+                            <td>Phẫu thuật cấp cứu</td>
+                            <td>BS. Nguyễn Văn Nam</td>
+                            <td>Phòng mổ 1</td>
+                            <td>28/11/2025<br><small class="table-small-text">09:00</small></td>
+                            <td>4 giờ</td>
+                            <td><span class="badge badge-success">Đã lên lịch</span></td>
+                            <td>
+                                <button class="btn btn-detail"><i class="ti-file"></i> Chi tiết</button>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div id="records" class="page hidden fade-in">
+            <div class="art-header">
+                <h4><i class="ti-file"></i> Hồ sơ Bệnh án Điện tử (EHR)</h4>
+                <div class="header-actions">
+                    <input type="text" placeholder="Tìm kiếm theo mã BN, tên..." class="input-search">
+                    <button class="btn add-btn" onclick="openRecordForm()">
+                        <i class="ti-plus"></i> Tạo hồ sơ mới
+                    </button>
+                </div>
+            </div>
+
+            <div class="block block-no-padding">
+                <table class="art-table">
+                    <thead>
+                        <tr>
+                            <th>Mã hồ sơ</th>
+                            <th>Bệnh nhân</th>
+                            <th>Chẩn đoán</th>
+                            <th>Bác sĩ điều trị</th>
+                            <th>Khoa</th>
+                            <th>Ngày nhập viện</th>
+                            <th>Ngày xuất viện</th>
+                            <th>Số ngày điều trị</th>
+                            <th>Trạng thái</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HS001</td>
+                            <td><b>Nguyễn Văn An</b><br><small class="table-small-text">BN001 - 1990</small></td>
+                            <td>Viêm phổi cấp</td>
+                            <td>BS. Trần Văn Hùng</td>
+                            <td>Khoa Nội</td>
+                            <td>25/11/2025</td>
+                            <td>-</td>
+                            <td>2 ngày</td>
+                            <td><span class="badge badge-danger">Đang điều trị</span></td>
+                            <td>
+                                <button class="btn btn-detail" onclick="viewRecordDetail('HS001')"><i class="ti-file"></i> Xem</button>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>HS002</td>
+                            <td><b>Trần Thị Bưởi</b><br><small class="table-small-text">BN002 - 1985</small></td>
+                            <td>Sốt xuất huyết</td>
+                            <td>BS. Lê Thị Mai</td>
+                            <td>Khoa Ngoại</td>
+                            <td>20/11/2025</td>
+                            <td>26/11/2025</td>
+                            <td>6 ngày</td>
+                            <td><span class="badge badge-success">Đã xuất viện</span></td>
+                            <td>
+                                <button class="btn btn-detail" onclick="viewRecordDetail('HS002')"><i class="ti-file"></i> Xem</button>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>HS003</td>
+                            <td><b>Lê Văn Cường</b><br><small class="table-small-text">BN003 - 2000</small></td>
+                            <td>Gãy xương kín</td>
+                            <td>BS. Phạm Văn Đức</td>
+                            <td>Khoa Ngoại</td>
+                            <td>15/11/2025</td>
+                            <td>22/11/2025</td>
+                            <td>7 ngày</td>
+                            <td><span class="badge badge-success">Đã xuất viện</span></td>
+                            <td>
+                                <button class="btn btn-detail" onclick="viewRecordDetail('HS003')"><i class="ti-file"></i> Xem</button>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>HS004</td>
+                            <td><b>Phạm Thị Dung</b><br><small class="table-small-text">BN004 - 1975</small></td>
+                            <td>Tiểu đường type 2</td>
+                            <td>BS. Nguyễn Văn Nam</td>
+                            <td>Khoa Nội</td>
+                            <td>18/11/2025</td>
+                            <td>-</td>
+                            <td>9 ngày</td>
+                            <td><span class="badge badge-warning">Theo dõi</span></td>
+                            <td>
+                                <button class="btn btn-detail" onclick="viewRecordDetail('HS004')"><i class="ti-file"></i> Xem</button>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div id="billing" class="page hidden fade-in">
+            <div class="art-header">
+                <h4><i class="ti-money"></i> Quản lý Viện phí & Bảo hiểm y tế</h4>
+                <button class="btn add-btn" onclick="openBillingForm()">
+                    <i class="ti-plus"></i> Tạo hóa đơn
+                </button>
+            </div>
+
+            <div class="dashboard dashboard-mb-30">
+                <div class="card blue">
+                    <i class="ti-money"></i>
+                    <p>Tổng thu (Tháng)</p>
+                    <h3>1.250 Tr</h3>
+                </div>
+                <div class="card green">
+                    <i class="ti-credit-card"></i>
+                    <p>Đã thu</p>
+                    <h3>980 Tr</h3>
+                </div>
+                <div class="card orange">
+                    <i class="ti-id-badge"></i>
+                    <p>BHYT thanh toán</p>
+                    <h3>420 Tr</h3>
+                </div>
+                <div class="card red">
+                    <i class="ti-alert"></i>
+                    <p>Công nợ</p>
+                    <h3>270 Tr</h3>
+                </div>
+            </div>
+
+            <div class="block block-mb-30">
+                <h4><i class="ti-id-badge"></i> Thông tin Bảo hiểm y tế</h4>
+                <div class="d-grid grid-auto-fit-250 gap-20 mt-20">
+                    <div class="info-card">
+                        <p class="info-card-label">Tổng số thẻ BHYT</p>
+                        <h3 class="info-card-value-primary">1.245</h3>
+                    </div>
+                    <div class="info-card">
+                        <p class="info-card-label">Đang sử dụng</p>
+                        <h3 class="info-card-value-success">856</h3>
+                    </div>
+                    <div class="info-card">
+                        <p class="info-card-label">Tỷ lệ thanh toán BHYT</p>
+                        <h3 class="info-card-value-warning">33.6%</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block block-no-padding">
+                <table class="art-table">
+                    <thead>
+                        <tr>
+                            <th>Mã hóa đơn</th>
+                            <th>Bệnh nhân</th>
+                            <th>Loại dịch vụ</th>
+                            <th>Tổng tiền</th>
+                            <th>BHYT thanh toán</th>
+                            <th>Bệnh nhân trả</th>
+                            <th>Đã thanh toán</th>
+                            <th>Còn lại</th>
+                            <th>Ngày tạo</th>
+                            <th>Trạng thái</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HD001</td>
+                            <td><b>Nguyễn Văn An</b><br><small class="table-small-text">BHYT: 80%</small></td>
+                            <td>Khám + Điều trị</td>
+                            <td><b>5.500.000 đ</b></td>
+                            <td>4.400.000 đ</td>
+                            <td>1.100.000 đ</td>
+                            <td>600.000 đ</td>
+                            <td>500.000 đ</td>
+                            <td>25/11/2025</td>
+                            <td><span class="badge badge-warning">Chưa đủ</span></td>
+                            <td>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                                <button class="btn btn-detail"><i class="ti-file"></i> In</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>HD002</td>
+                            <td><b>Trần Thị Bưởi</b><br><small class="table-small-text">BHYT: 100%</small></td>
+                            <td>Khám + Xét nghiệm</td>
+                            <td><b>2.800.000 đ</b></td>
+                            <td>2.800.000 đ</td>
+                            <td>0 đ</td>
+                            <td>2.800.000 đ</td>
+                            <td>0 đ</td>
+                            <td>20/11/2025</td>
+                            <td><span class="badge badge-success">Đã thanh toán</span></td>
+                            <td>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                                <button class="btn btn-detail"><i class="ti-file"></i> In</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>HD003</td>
+                            <td><b>Lê Văn Cường</b><br><small class="table-small-text">Không BHYT</small></td>
+                            <td>Phẫu thuật</td>
+                            <td><b>15.000.000 đ</b></td>
+                            <td>0 đ</td>
+                            <td>15.000.000 đ</td>
+                            <td>10.000.000 đ</td>
+                            <td>5.000.000 đ</td>
+                            <td>15/11/2025</td>
+                            <td><span class="badge badge-warning">Chưa đủ</span></td>
+                            <td>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                                <button class="btn btn-detail"><i class="ti-file"></i> In</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>HD004</td>
+                            <td><b>Phạm Thị Dung</b><br><small class="table-small-text">BHYT: 80%</small></td>
+                            <td>Khám thường</td>
+                            <td><b>500.000 đ</b></td>
+                            <td>400.000 đ</td>
+                            <td>100.000 đ</td>
+                            <td>100.000 đ</td>
+                            <td>0 đ</td>
+                            <td>18/11/2025</td>
+                            <td><span class="badge badge-success">Đã thanh toán</span></td>
+                            <td>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                                <button class="btn btn-detail"><i class="ti-file"></i> In</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div id="appointments" class="page hidden fade-in">
+            <div class="art-header">
+                <h4><i class="ti-calendar"></i> Lịch khám & Hẹn</h4>
+                <button class="btn add-btn" onclick="openAppointmentForm()">
+                    <i class="ti-plus"></i> Đặt lịch mới
+                </button>
+            </div>
+            
+            <div class="block block-mb-20">
+                <div class="filter-controls-simple">
+                    <button class="btn btn-primary-light">Hôm nay</button>
+                    <button class="btn btn-gray">Tuần này</button>
+                    <button class="btn btn-gray">Tháng này</button>
+                    <button class="btn btn-gray">Tất cả</button>
+                </div>
+            </div>
+
+            <div class="block block-no-padding">
+                <table class="art-table">
+                    <thead>
+                        <tr>
+                            <th>Mã lịch</th>
+                            <th>Bệnh nhân</th>
+                            <th>Bác sĩ</th>
+                            <th>Khoa</th>
+                            <th>Ngày giờ</th>
+                            <th>Loại khám</th>
+                            <th>Trạng thái</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>LH001</td>
+                            <td><b>Nguyễn Văn An</b></td>
+                            <td>BS. Trần Văn Hùng</td>
+                            <td>Khoa Nội</td>
+                            <td>27/11/2025<br><small class="table-small-text">09:00</small></td>
+                            <td>Khám thường</td>
+                            <td><span class="badge badge-success">Đã xác nhận</span></td>
+                            <td>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i></button>
+                                <button class="btn btn-detail"><i class="ti-eye"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>LH002</td>
+                            <td><b>Trần Thị Bưởi</b></td>
+                            <td>BS. Lê Thị Mai</td>
+                            <td>Khoa Ngoại</td>
+                            <td>27/11/2025<br><small class="table-small-text">10:30</small></td>
+                            <td>Khám cấp cứu</td>
+                            <td><span class="badge badge-warning">Chờ xác nhận</span></td>
+                            <td>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i></button>
+                                <button class="btn btn-detail"><i class="ti-eye"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>LH003</td>
+                            <td><b>Lê Văn Cường</b></td>
+                            <td>BS. Phạm Văn Đức</td>
+                            <td>Khoa Nhi</td>
+                            <td>28/11/2025<br><small class="table-small-text">14:00</small></td>
+                            <td>Khám định kỳ</td>
+                            <td><span class="badge badge-success">Đã xác nhận</span></td>
+                            <td>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i></button>
+                                <button class="btn btn-detail"><i class="ti-eye"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>LH004</td>
+                            <td><b>Phạm Thị Dung</b></td>
+                            <td>BS. Nguyễn Văn Nam</td>
+                            <td>Khoa Sản</td>
+                            <td>28/11/2025<br><small class="table-small-text">08:00</small></td>
+                            <td>Khám thường</td>
+                            <td><span class="badge badge-danger">Đã hủy</span></td>
+                            <td>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i></button>
+                                <button class="btn btn-detail"><i class="ti-eye"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="doctors" class="page hidden fade-in">
+            <div class="art-header">
+                <h4><i class="ti-user"></i> Quản lý Nhân sự Y tế</h4>
+                <button class="btn add-btn" onclick="openDoctorForm()">
+                    <i class="ti-plus"></i> Thêm nhân sự
+                </button>
+            </div>
+
+            <div class="block block-mb-20">
+                <div class="filter-controls-simple">
+                    <button class="btn btn-primary-light">Tất cả</button>
+                    <button class="btn btn-gray">Bác sĩ</button>
+                    <button class="btn btn-gray">Y tá</button>
+                    <button class="btn btn-gray">Nhân viên</button>
+                </div>
+            </div>
+
+            <div class="block block-no-padding">
+                <table class="art-table">
+                    <thead>
+                        <tr>
+                            <th>Mã NV</th>
+                            <th>Họ tên</th>
+                            <th>Chức vụ</th>
+                            <th>Khoa/Phòng</th>
+                            <th>Chuyên khoa</th>
+                            <th>Số điện thoại</th>
+                            <th>Trạng thái</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>NV001</td>
+                            <td><b>BS. Trần Văn Hùng</b></td>
+                            <td>Bác sĩ</td>
+                            <td>Khoa Nội</td>
+                            <td>Nội tổng quát</td>
+                            <td>0901234567</td>
+                            <td><span class="badge badge-success">Đang làm việc</span></td>
+                            <td>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                                <button class="btn btn-detail"><i class="ti-user"></i> Chi tiết</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>NV002</td>
+                            <td><b>BS. Lê Thị Mai</b></td>
+                            <td>Bác sĩ</td>
+                            <td>Khoa Ngoại</td>
+                            <td>Ngoại tổng quát</td>
+                            <td>0902345678</td>
+                            <td><span class="badge badge-success">Đang làm việc</span></td>
+                            <td>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                                <button class="btn btn-detail"><i class="ti-user"></i> Chi tiết</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>NV003</td>
+                            <td><b>YT. Nguyễn Thị Lan</b></td>
+                            <td>Y tá</td>
+                            <td>Khoa Nội</td>
+                            <td>-</td>
+                            <td>0903456789</td>
+                            <td><span class="badge badge-success">Đang làm việc</span></td>
+                            <td>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                                <button class="btn btn-detail"><i class="ti-user"></i> Chi tiết</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>NV004</td>
+                            <td><b>BS. Phạm Văn Đức</b></td>
+                            <td>Bác sĩ</td>
+                            <td>Khoa Nhi</td>
+                            <td>Nhi khoa</td>
+                            <td>0904567890</td>
+                            <td><span class="badge badge-warning">Nghỉ phép</span></td>
+                            <td>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                                <button class="btn btn-detail"><i class="ti-user"></i> Chi tiết</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>NV005</td>
+                            <td><b>BS. Nguyễn Văn Nam</b></td>
+                            <td>Bác sĩ</td>
+                            <td>Khoa Sản</td>
+                            <td>Sản phụ khoa</td>
+                            <td>0905678901</td>
+                            <td><span class="badge badge-success">Đang làm việc</span></td>
+                            <td>
+                                <button class="btn btn-edit"><i class="ti-pencil"></i> Sửa</button>
+                                <button class="btn btn-detail"><i class="ti-user"></i> Chi tiết</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="report" class="page hidden fade-in">
+            <div class="art-header">
+                <h4><i class="ti-bar-chart"></i> Báo cáo & Thống kê</h4>
+                <div class="header-actions">
+                    <select class="input-default">
+                        <option>Tháng 11/2025</option>
+                        <option>Tháng 10/2025</option>
+                        <option>Tháng 9/2025</option>
+                    </select>
+                    <button class="btn add-btn">
+                        <i class="ti-download"></i> Xuất Excel
+                    </button>
+                </div>
+            </div>
+
+            <div class="dashboard dashboard-mb-30">
+                <div class="card blue">
+                    <i class="ti-bar-chart"></i>
+                    <p>Tổng số ca khám</p>
+                    <h3>1.245</h3>
+                </div>
+                <div class="card green">
+                    <i class="ti-user"></i>
+                    <p>Bệnh nhân mới</p>
+                    <h3>89</h3>
+                </div>
+                <div class="card orange">
+                    <i class="ti-money"></i>
+                    <p>Doanh thu</p>
+                    <h3>1.250 Tr</h3>
+                </div>
+                <div class="card red">
+                    <i class="ti-time"></i>
+                    <p>Thời gian TB khám</p>
+                    <h3>25 phút</h3>
+                </div>
+            </div>
+
+            <div class="block block-mb-30">
+                <h4><i class="ti-layout-grid2"></i> Báo cáo Công suất Giường bệnh</h4>
+                <div class="mt-20">
+                    <table class="art-table">
+                        <thead>
+                            <tr>
+                                <th>Khoa/Phòng</th>
+                                <th>Tổng giường</th>
+                                <th>Đang sử dụng</th>
+                                <th>Trống</th>
+                                <th>Công suất (%)</th>
+                                <th>Số ngày TB/giường</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>Khoa Nội</b></td>
+                                <td>50</td>
+                                <td>35</td>
+                                <td>15</td>
+                                <td><b class="text-warning">70%</b></td>
+                                <td>5.2 ngày</td>
+                            </tr>
+                            <tr>
+                                <td><b>Khoa Ngoại</b></td>
+                                <td>40</td>
+                                <td>28</td>
+                                <td>12</td>
+                                <td><b class="text-warning">70%</b></td>
+                                <td>6.8 ngày</td>
+                            </tr>
+                            <tr>
+                                <td><b>Khoa Nhi</b></td>
+                                <td>30</td>
+                                <td>22</td>
+                                <td>8</td>
+                                <td><b class="text-warning">73%</b></td>
+                                <td>4.5 ngày</td>
+                            </tr>
+                            <tr>
+                                <td><b>Khoa Sản</b></td>
+                                <td>25</td>
+                                <td>18</td>
+                                <td>7</td>
+                                <td><b class="text-warning">72%</b></td>
+                                <td>3.2 ngày</td>
+                            </tr>
+                            <tr class="report-total-row">
+                                <td><b>TỔNG CỘNG</b></td>
+                                <td>145</td>
+                                <td>103</td>
+                                <td>42</td>
+                                <td><b class="text-primary">71%</b></td>
+                                <td>5.0 ngày</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="block block-mb-30">
+                <h4><i class="ti-money"></i> Báo cáo Chi phí Điều trị</h4>
+                <div class="mt-20">
+                    <table class="art-table">
+                        <thead>
+                            <tr>
+                                <th>Khoa/Phòng</th>
+                                <th>Số ca điều trị</th>
+                                <th>Tổng chi phí</th>
+                                <th>Chi phí TB/ca</th>
+                                <th>BHYT thanh toán</th>
+                                <th>Bệnh nhân trả</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>Khoa Nội</b></td>
+                                <td>425</td>
+                                <td>425.000.000 đ</td>
+                                <td>1.000.000 đ</td>
+                                <td>340.000.000 đ (80%)</td>
+                                <td>85.000.000 đ (20%)</td>
+                            </tr>
+                            <tr>
+                                <td><b>Khoa Ngoại</b></td>
+                                <td>320</td>
+                                <td>960.000.000 đ</td>
+                                <td>3.000.000 đ</td>
+                                <td>672.000.000 đ (70%)</td>
+                                <td>288.000.000 đ (30%)</td>
+                            </tr>
+                            <tr>
+                                <td><b>Khoa Nhi</b></td>
+                                <td>280</td>
+                                <td>280.000.000 đ</td>
+                                <td>1.000.000 đ</td>
+                                <td>224.000.000 đ (80%)</td>
+                                <td>56.000.000 đ (20%)</td>
+                            </tr>
+                            <tr>
+                                <td><b>Khoa Sản</b></td>
+                                <td>220</td>
+                                <td>440.000.000 đ</td>
+                                <td>2.000.000 đ</td>
+                                <td>352.000.000 đ (80%)</td>
+                                <td>88.000.000 đ (20%)</td>
+                            </tr>
+                            <tr class="report-total-row">
+                                <td><b>TỔNG CỘNG</b></td>
+                                <td>1.245</td>
+                                <td><b>2.105.000.000 đ</b></td>
+                                <td><b>1.690.000 đ</b></td>
+                                <td><b>1.588.000.000 đ (75.4%)</b></td>
+                                <td><b>517.000.000 đ (24.6%)</b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="d-grid grid-2-col gap-25 mb-30">
+                <div class="block">
+                    <h4><i class="ti-bar-chart-alt"></i> Thống kê theo khoa</h4>
+                    <div class="mt-20">
+                        <div class="stats-list-item">
+                            <span>Khoa Nội</span>
+                            <b>425 ca</b>
+                        </div>
+                        <div class="stats-list-item">
+                            <span>Khoa Ngoại</span>
+                            <b>320 ca</b>
+                        </div>
+                        <div class="stats-list-item">
+                            <span>Khoa Nhi</span>
+                            <b>280 ca</b>
+                        </div>
+                        <div class="stats-list-item">
+                            <span>Khoa Sản</span>
+                            <b>220 ca</b>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <h4><i class="ti-pie-chart"></i> Tỷ lệ loại khám</h4>
+                    <div class="mt-20">
+                        <div class="stats-list-item">
+                            <span>Khám thường</span>
+                            <b>65%</b>
+                        </div>
+                        <div class="stats-list-item">
+                            <span>Khám cấp cứu</span>
+                            <b>20%</b>
+                        </div>
+                        <div class="stats-list-item">
+                            <span>Khám định kỳ</span>
+                            <b>10%</b>
+                        </div>
+                        <div class="stats-list-item">
+                            <span>Khác</span>
+                            <b>5%</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block">
+                <h4><i class="ti-line-chart"></i> Biểu đồ doanh thu (7 ngày gần nhất)</h4>
+                <div class="chart-placeholder">
+                    <i class="ti-bar-chart chart-placeholder-icon"></i>
+                    <p class="chart-placeholder-text">Biểu đồ sẽ được tích hợp sau</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="settings" class="page hidden fade-in">
+            <div class="art-header">
+                <h4><i class="ti-settings"></i> Cấu hình Hệ thống</h4>
+            </div>
+
+            <div class="block">
+                <h4><i class="ti-user"></i> Thông tin Bệnh viện</h4>
+                <div class="mt-20">
+                    <div class="settings-input-group">
+                        <label class="settings-label">Tên bệnh viện</label>
+                        <input type="text" value="Bệnh viện Đa khoa Trung ương" class="input-full">
+                    </div>
+                    <div class="settings-input-group">
+                        <label class="settings-label">Địa chỉ</label>
+                        <input type="text" value="123 Đường ABC, Quận XYZ, TP. Hà Nội" class="input-full">
+                    </div>
+                    <div class="settings-input-group">
+                        <label class="settings-label">Số điện thoại</label>
+                        <input type="text" value="024.1234.5678" class="input-full">
+                    </div>
+                    <div class="settings-input-group">
+                        <label class="settings-label">Email</label>
+                        <input type="email" value="info@benhvien.vn" class="input-full">
+                    </div>
+                    <div class="settings-button-group">
+                        <button class="btn add-btn">
+                        <i class="ti-check"></i> Lưu thay đổi
+                    </button>
+                </div>
+            </div>
+
+            <div class="block">
+                <h4><i class="ti-lock"></i> Bảo mật & Quyền truy cập</h4>
+                <div class="mt-20">
+                    <div class="settings-input-group">
+                        <label class="settings-checkbox-label">
+                            <input type="checkbox" checked class="settings-checkbox">
+                            <span>Yêu cầu xác thực 2 lớp cho Admin</span>
+                        </label>
+                    </div>
+                    <div class="settings-input-group">
+                        <label class="settings-checkbox-label">
+                            <input type="checkbox" checked class="settings-checkbox">
+                            <span>Ghi log tất cả thao tác quan trọng</span>
+                        </label>
+                    </div>
+                    <div class="settings-input-group">
+                        <label class="settings-checkbox-label">
+                            <input type="checkbox" class="settings-checkbox">
+                            <span>Cho phép đăng nhập từ xa</span>
+                        </label>
+                    </div>
+                    <div class="settings-button-group">
+                        <button class="btn add-btn">
+                        <i class="ti-check"></i> Lưu cài đặt
+                    </button>
+                </div>
+            </div>
+
+            <div class="block">
+                <h4><i class="ti-bell"></i> Thông báo & Cảnh báo</h4>
+                <div class="mt-20">
+                    <div class="settings-input-group">
+                        <label class="settings-label">Email nhận cảnh báo</label>
+                        <input type="email" value="admin@benhvien.vn" class="input-full">
+                    </div>
+                    <div class="settings-input-group">
+                        <label class="settings-label">Số điện thoại khẩn cấp</label>
+                        <input type="text" value="0901234567" class="input-full">
+                    </div>
+                    <div class="settings-input-group">
+                        <label class="settings-checkbox-label">
+                            <input type="checkbox" checked class="settings-checkbox">
+                            <span>Gửi email cảnh báo khi có ca cấp cứu</span>
+                        </label>
+                    </div>
+                    <div class="settings-button-group">
+                        <button class="btn add-btn">
+                        <i class="ti-check"></i> Lưu cài đặt
+                    </button>
+                </div>
+            </div>
+
+            <div class="block bg-warning-light border-left-warning">
+                <h4 class="text-yellow-dark"><i class="ti-alert"></i> Sao lưu & Khôi phục</h4>
+                <p class="text-yellow-dark mt-15">Đảm bảo dữ liệu được sao lưu định kỳ để tránh mất mát thông tin.</p>
+                <div class="d-flex gap-10 mt-15">
+                    <button class="btn btn-warning">
+                        <i class="ti-download"></i> Sao lưu ngay
+                    </button>
+                    <button class="btn btn-gray">
+                        <i class="ti-upload"></i> Khôi phục từ file
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+    </div> 
+</body>
+</html>
