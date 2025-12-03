@@ -1,0 +1,415 @@
+/* ============================
+   DEPARTMENTS PAGE STYLES
+   Trang Khoa Phòng - Người dùng
+=============================== */
+
+/* Hero Section */
+.departments-hero {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+  color: var(--white);
+  padding: 100px 0;
+  text-align: center;
+  margin-top: 0;
+}
+
+.departments-hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.departments-hero p {
+  font-size: 20px;
+  opacity: 0.95;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Stats Overview Section */
+.departments-stats-section {
+  background-color: var(--bg-light);
+  padding: 60px 0;
+}
+
+.stats-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.stat-overview-card {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+  padding: 40px 30px;
+  border-radius: 15px;
+  text-align: center;
+  color: var(--white);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.stat-overview-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: var(--shadow-hover);
+}
+
+.stat-overview-card .stat-icon {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.stat-overview-card h3 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.stat-overview-card p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* Departments List Section */
+.departments-list-section {
+  background-color: var(--white);
+  padding: 80px 0;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 18px;
+  margin-bottom: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Departments Grid */
+.departments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.department-card {
+  background: var(--white);
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--primary-color);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.department-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.department-icon {
+  font-size: 60px;
+  text-align: center;
+  padding: 30px 0 10px;
+  background: linear-gradient(135deg, var(--bg-light) 0%, var(--white) 100%);
+}
+
+.department-header {
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-light);
+}
+
+.department-header h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.department-badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.badge-internal {
+  background-color: #2196F3;
+}
+
+.badge-surgery {
+  background-color: #4CAF50;
+}
+
+.badge-maternity {
+  background-color: #E91E63;
+}
+
+.badge-pediatrics {
+  background-color: #FF9800;
+}
+
+.badge-emergency {
+  background-color: #F44336;
+}
+
+.badge-cardiology {
+  background-color: #9C27B0;
+}
+
+.department-body {
+  padding: 25px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.department-description {
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 25px;
+  font-size: 15px;
+}
+
+.department-info {
+  margin-bottom: 25px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-icon {
+  font-size: 24px;
+  width: 40px;
+  text-align: center;
+}
+
+.info-item div {
+  flex: 1;
+}
+
+.info-item strong {
+  display: block;
+  color: var(--text-dark);
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.info-item small {
+  display: block;
+  color: var(--text-light);
+  font-size: 13px;
+}
+
+.department-services {
+  margin-bottom: 25px;
+  flex: 1;
+}
+
+.department-services h4 {
+  font-size: 16px;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.department-services ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.department-services ul li {
+  padding: 8px 0;
+  padding-left: 25px;
+  position: relative;
+  color: var(--text-light);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.department-services ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.btn-department {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 14px 20px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.btn-department:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
+}
+
+/* Info Section */
+.departments-info-section {
+  background-color: var(--bg-light);
+  padding: 80px 0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.info-card {
+  background-color: var(--white);
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.info-icon-large {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.info-card h3 {
+  font-size: 22px;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.info-card p {
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.info-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.info-card ul li {
+  padding: 10px 0;
+  padding-left: 25px;
+  position: relative;
+  color: var(--text-light);
+  font-size: 14px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.info-card ul li:last-child {
+  border-bottom: none;
+}
+
+.info-card ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.info-card ul li strong {
+  color: var(--text-dark);
+}
+
+/* Active Nav Item */
+.nav-list-item.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.nav-list-item.active::after {
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .departments-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .departments-hero h1 {
+    font-size: 36px;
+  }
+
+  .departments-hero p {
+    font-size: 18px;
+  }
+
+  .stats-overview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .departments-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .departments-hero {
+    padding: 60px 0;
+  }
+
+  .departments-hero h1 {
+    font-size: 28px;
+  }
+
+  .departments-hero p {
+    font-size: 16px;
+  }
+
+  .stats-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-overview-card h3 {
+    font-size: 36px;
+  }
+
+  .department-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
