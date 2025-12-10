@@ -30,11 +30,18 @@
       </div>
     </header>
 
-    <!-- Hero Banner -->
-    <section class="departments-hero">
+    <!-- Page Title Section -->
+    <section class="page-title-section">
       <div class="container">
-        <h1>Khoa Phòng & Dịch Vụ</h1>
-        <p>Khám phá các khoa phòng chuyên khoa và dịch vụ y tế chất lượng cao của chúng tôi</p>
+        <div class="page-title-content">
+          <h1>Khoa Phòng & Chuyên Khoa</h1>
+          <p>Hệ thống khoa phòng hiện đại với đội ngũ y bác sĩ giàu kinh nghiệm, tận tâm chăm sóc sức khỏe của bạn</p>
+          <div class="breadcrumb">
+            <a href="../index.html">Trang chủ</a>
+            <span class="separator">/</span>
+            <span class="current">Khoa phòng</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -42,25 +49,53 @@
     <section class="departments-stats-section">
       <div class="container">
         <div class="stats-overview">
-          <div class="stat-overview-card">
-            <div class="stat-icon">🏥</div>
-            <h3>193</h3>
-            <p>Tổng số giường</p>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 21h18M5 21V7l8-4 8 4v14M9 21v-8h6v8"/>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <span class="stat-number">193</span>
+              <span class="stat-label">Tổng số giường</span>
+            </div>
           </div>
-          <div class="stat-overview-card">
-            <div class="stat-icon">✅</div>
-            <h3>45</h3>
-            <p>Giường trống</p>
+          <div class="stat-card">
+            <div class="stat-icon available">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <span class="stat-number">45</span>
+              <span class="stat-label">Giường trống</span>
+            </div>
           </div>
-          <div class="stat-overview-card">
-            <div class="stat-icon">👨‍⚕️</div>
-            <h3>6</h3>
-            <p>Khoa chuyên khoa</p>
+          <div class="stat-card">
+            <div class="stat-icon doctors">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <span class="stat-number">6</span>
+              <span class="stat-label">Khoa chuyên khoa</span>
+            </div>
           </div>
-          <div class="stat-overview-card">
-            <div class="stat-icon">⏰</div>
-            <h3>24/7</h3>
-            <p>Phục vụ cấp cứu</p>
+          <div class="stat-card">
+            <div class="stat-icon emergency">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <span class="stat-number">24/7</span>
+              <span class="stat-label">Phục vụ cấp cứu</span>
+            </div>
           </div>
         </div>
       </div>
@@ -69,272 +104,294 @@
     <!-- Danh sách Khoa Phòng -->
     <section class="departments-list-section">
       <div class="container">
-        <h2 class="section-title">Các Khoa Phòng</h2>
-        <p class="section-subtitle">Bệnh viện chúng tôi có đầy đủ các khoa chuyên môn với đội ngũ y bác sĩ giàu kinh nghiệm</p>
+        <div class="section-header">
+          <span class="section-tag">Chuyên khoa</span>
+          <h2 class="section-title">Các Khoa Phòng</h2>
+          <p class="section-subtitle">Bệnh viện chúng tôi có đầy đủ các khoa chuyên môn với đội ngũ y bác sĩ giàu kinh nghiệm, trang thiết bị hiện đại</p>
+        </div>
         
         <!-- Grid khoa phòng -->
         <div class="departments-grid">
           <!-- Khoa Nội -->
           <div class="department-card">
-            <div class="department-icon">🫁</div>
-            <div class="department-header">
-              <h3>Khoa Nội</h3>
-              <span class="department-badge badge-internal">Nội khoa</span>
+            <div class="department-icon-wrapper internal">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M6.081 20c-1.394-2.244-3.081-6.132-3.081-8.5C3 6.804 7.029 3 12 3s9 3.804 9 8.5c0 2.368-1.687 6.256-3.081 8.5"/>
+                <path d="M12 3v10"/>
+                <path d="M12 13l-3 3"/>
+                <path d="M12 13l3 3"/>
+                <circle cx="12" cy="21" r="2"/>
+              </svg>
             </div>
-            <div class="department-body">
+            <div class="department-content">
+              <div class="department-header">
+                <h3>Khoa Nội</h3>
+                <span class="department-badge internal">Nội khoa</span>
+              </div>
               <p class="department-description">Chuyên điều trị các bệnh lý nội khoa, bệnh mãn tính và chăm sóc sức khỏe tổng quát.</p>
-              <div class="department-info">
-                <div class="info-item">
-                  <span class="info-icon">🛏️</span>
-                  <div>
-                    <strong>45 giường</strong>
-                    <small>12 giường trống</small>
-                  </div>
+              <div class="department-stats">
+                <div class="dept-stat">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M2 4v16h20V7.5L14.5 2H2z"/>
+                    <path d="M14 2v6h6"/>
+                  </svg>
+                  <span><strong>45</strong> giường</span>
                 </div>
-                <div class="info-item">
-                  <span class="info-icon">👨‍⚕️</span>
-                  <div>
-                    <strong>15 bác sĩ</strong>
-                    <small>Chuyên khoa nội</small>
-                  </div>
-                </div>
-                <div class="info-item">
-                  <span class="info-icon">📞</span>
-                  <div>
-                    <strong>024.1234.5678</strong>
-                    <small>Hotline khoa</small>
-                  </div>
+                <div class="dept-stat">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                  </svg>
+                  <span><strong>15</strong> bác sĩ</span>
                 </div>
               </div>
-              <div class="department-services">
-                <h4>Dịch vụ chính:</h4>
-                <ul>
-                  <li>Khám và điều trị bệnh nội khoa</li>
-                  <li>Quản lý bệnh mãn tính</li>
-                  <li>Tư vấn sức khỏe</li>
-                </ul>
+              <ul class="department-services">
+                <li>Khám và điều trị bệnh nội khoa</li>
+                <li>Quản lý bệnh mãn tính</li>
+                <li>Tư vấn sức khỏe</li>
+              </ul>
+              <div class="department-footer">
+                <div class="hotline">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                  <span>024.1234.5678</span>
+                </div>
+                <a href="#" class="btn-detail">Xem chi tiết</a>
               </div>
-              <a href="#" class="btn-department">Xem thêm</a>
             </div>
           </div>
 
           <!-- Khoa Ngoại -->
           <div class="department-card">
-            <div class="department-icon">⚕️</div>
-            <div class="department-header">
-              <h3>Khoa Ngoại</h3>
-              <span class="department-badge badge-surgery">Ngoại khoa</span>
+            <div class="department-icon-wrapper surgery">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
             </div>
-            <div class="department-body">
+            <div class="department-content">
+              <div class="department-header">
+                <h3>Khoa Ngoại</h3>
+                <span class="department-badge surgery">Ngoại khoa</span>
+              </div>
               <p class="department-description">Thực hiện các phẫu thuật và điều trị các bệnh lý ngoại khoa với trang thiết bị hiện đại.</p>
-              <div class="department-info">
-                <div class="info-item">
-                  <span class="info-icon">🛏️</span>
-                  <div>
-                    <strong>38 giường</strong>
-                    <small>8 giường trống</small>
-                  </div>
+              <div class="department-stats">
+                <div class="dept-stat">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M2 4v16h20V7.5L14.5 2H2z"/>
+                    <path d="M14 2v6h6"/>
+                  </svg>
+                  <span><strong>38</strong> giường</span>
                 </div>
-                <div class="info-item">
-                  <span class="info-icon">👨‍⚕️</span>
-                  <div>
-                    <strong>12 bác sĩ</strong>
-                    <small>Phẫu thuật viên</small>
-                  </div>
-                </div>
-                <div class="info-item">
-                  <span class="info-icon">📞</span>
-                  <div>
-                    <strong>024.1234.5679</strong>
-                    <small>Hotline khoa</small>
-                  </div>
+                <div class="dept-stat">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                  </svg>
+                  <span><strong>12</strong> bác sĩ</span>
                 </div>
               </div>
-              <div class="department-services">
-                <h4>Dịch vụ chính:</h4>
-                <ul>
-                  <li>Phẫu thuật nội soi</li>
-                  <li>Phẫu thuật mở</li>
-                  <li>Điều trị chấn thương</li>
-                </ul>
+              <ul class="department-services">
+                <li>Phẫu thuật nội soi</li>
+                <li>Phẫu thuật mở</li>
+                <li>Điều trị chấn thương</li>
+              </ul>
+              <div class="department-footer">
+                <div class="hotline">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                  <span>024.1234.5679</span>
+                </div>
+                <a href="#" class="btn-detail">Xem chi tiết</a>
               </div>
-              <a href="#" class="btn-department">Xem thêm</a>
             </div>
           </div>
 
           <!-- Khoa Sản -->
           <div class="department-card">
-            <div class="department-icon">👶</div>
-            <div class="department-header">
-              <h3>Khoa Sản</h3>
-              <span class="department-badge badge-maternity">Sản phụ khoa</span>
+            <div class="department-icon-wrapper maternity">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9 12h.01M15 12h.01M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/>
+                <path d="M12 2a8 8 0 0 0-8 8v12h16V10a8 8 0 0 0-8-8z"/>
+              </svg>
             </div>
-            <div class="department-body">
+            <div class="department-content">
+              <div class="department-header">
+                <h3>Khoa Sản</h3>
+                <span class="department-badge maternity">Sản phụ khoa</span>
+              </div>
               <p class="department-description">Chăm sóc sức khỏe mẹ và bé, hỗ trợ sinh nở an toàn với đội ngũ chuyên khoa giàu kinh nghiệm.</p>
-              <div class="department-info">
-                <div class="info-item">
-                  <span class="info-icon">🛏️</span>
-                  <div>
-                    <strong>30 giường</strong>
-                    <small>5 giường trống</small>
-                  </div>
+              <div class="department-stats">
+                <div class="dept-stat">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M2 4v16h20V7.5L14.5 2H2z"/>
+                    <path d="M14 2v6h6"/>
+                  </svg>
+                  <span><strong>30</strong> giường</span>
                 </div>
-                <div class="info-item">
-                  <span class="info-icon">👨‍⚕️</span>
-                  <div>
-                    <strong>10 bác sĩ</strong>
-                    <small>Chuyên khoa sản</small>
-                  </div>
-                </div>
-                <div class="info-item">
-                  <span class="info-icon">📞</span>
-                  <div>
-                    <strong>024.1234.5680</strong>
-                    <small>Hotline khoa</small>
-                  </div>
+                <div class="dept-stat">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                  </svg>
+                  <span><strong>10</strong> bác sĩ</span>
                 </div>
               </div>
-              <div class="department-services">
-                <h4>Dịch vụ chính:</h4>
-                <ul>
-                  <li>Khám thai định kỳ</li>
-                  <li>Đỡ đẻ và chăm sóc sau sinh</li>
-                  <li>Điều trị phụ khoa</li>
-                </ul>
+              <ul class="department-services">
+                <li>Khám thai định kỳ</li>
+                <li>Đỡ đẻ và chăm sóc sau sinh</li>
+                <li>Điều trị phụ khoa</li>
+              </ul>
+              <div class="department-footer">
+                <div class="hotline">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                  <span>024.1234.5680</span>
+                </div>
+                <a href="#" class="btn-detail">Xem chi tiết</a>
               </div>
-              <a href="#" class="btn-department">Xem thêm</a>
             </div>
           </div>
 
           <!-- Khoa Nhi -->
           <div class="department-card">
-            <div class="department-icon">🧒</div>
-            <div class="department-header">
-              <h3>Khoa Nhi</h3>
-              <span class="department-badge badge-pediatrics">Nhi khoa</span>
+            <div class="department-icon-wrapper pediatrics">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="8" r="5"/>
+                <path d="M20 21a8 8 0 1 0-16 0"/>
+              </svg>
             </div>
-            <div class="department-body">
+            <div class="department-content">
+              <div class="department-header">
+                <h3>Khoa Nhi</h3>
+                <span class="department-badge pediatrics">Nhi khoa</span>
+              </div>
               <p class="department-description">Chuyên điều trị các bệnh lý ở trẻ em với môi trường thân thiện, phù hợp với trẻ nhỏ.</p>
-              <div class="department-info">
-                <div class="info-item">
-                  <span class="info-icon">🛏️</span>
-                  <div>
-                    <strong>35 giường</strong>
-                    <small>10 giường trống</small>
-                  </div>
+              <div class="department-stats">
+                <div class="dept-stat">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M2 4v16h20V7.5L14.5 2H2z"/>
+                    <path d="M14 2v6h6"/>
+                  </svg>
+                  <span><strong>35</strong> giường</span>
                 </div>
-                <div class="info-item">
-                  <span class="info-icon">👨‍⚕️</span>
-                  <div>
-                    <strong>8 bác sĩ</strong>
-                    <small>Chuyên khoa nhi</small>
-                  </div>
-                </div>
-                <div class="info-item">
-                  <span class="info-icon">📞</span>
-                  <div>
-                    <strong>024.1234.5681</strong>
-                    <small>Hotline khoa</small>
-                  </div>
+                <div class="dept-stat">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                  </svg>
+                  <span><strong>8</strong> bác sĩ</span>
                 </div>
               </div>
-              <div class="department-services">
-                <h4>Dịch vụ chính:</h4>
-                <ul>
-                  <li>Khám và điều trị bệnh trẻ em</li>
-                  <li>Tiêm chủng</li>
-                  <li>Tư vấn dinh dưỡng</li>
-                </ul>
+              <ul class="department-services">
+                <li>Khám và điều trị bệnh trẻ em</li>
+                <li>Tiêm chủng</li>
+                <li>Tư vấn dinh dưỡng</li>
+              </ul>
+              <div class="department-footer">
+                <div class="hotline">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                  <span>024.1234.5681</span>
+                </div>
+                <a href="#" class="btn-detail">Xem chi tiết</a>
               </div>
-              <a href="#" class="btn-department">Xem thêm</a>
             </div>
           </div>
 
           <!-- Khoa Cấp cứu -->
           <div class="department-card">
-            <div class="department-icon">🚑</div>
-            <div class="department-header">
-              <h3>Khoa Cấp cứu</h3>
-              <span class="department-badge badge-emergency">Cấp cứu</span>
+            <div class="department-icon-wrapper emergency">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M12 8v4M12 16h.01"/>
+              </svg>
             </div>
-            <div class="department-body">
+            <div class="department-content">
+              <div class="department-header">
+                <h3>Khoa Cấp cứu</h3>
+                <span class="department-badge emergency">Cấp cứu 24/7</span>
+              </div>
               <p class="department-description">Phục vụ 24/7 với đội ngũ cấp cứu chuyên nghiệp, sẵn sàng xử lý mọi tình huống khẩn cấp.</p>
-              <div class="department-info">
-                <div class="info-item">
-                  <span class="info-icon">🛏️</span>
-                  <div>
-                    <strong>20 giường</strong>
-                    <small>3 giường trống</small>
-                  </div>
+              <div class="department-stats">
+                <div class="dept-stat">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M2 4v16h20V7.5L14.5 2H2z"/>
+                    <path d="M14 2v6h6"/>
+                  </svg>
+                  <span><strong>20</strong> giường</span>
                 </div>
-                <div class="info-item">
-                  <span class="info-icon">👨‍⚕️</span>
-                  <div>
-                    <strong>20 bác sĩ</strong>
-                    <small>Luân phiên 24/7</small>
-                  </div>
-                </div>
-                <div class="info-item">
-                  <span class="info-icon">📞</span>
-                  <div>
-                    <strong>1900.123.456</strong>
-                    <small>Hotline cấp cứu</small>
-                  </div>
+                <div class="dept-stat">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                  </svg>
+                  <span><strong>20</strong> bác sĩ</span>
                 </div>
               </div>
-              <div class="department-services">
-                <h4>Dịch vụ chính:</h4>
-                <ul>
-                  <li>Cấp cứu 24/7</li>
-                  <li>Xử lý tai nạn</li>
-                  <li>Hồi sức cấp cứu</li>
-                </ul>
+              <ul class="department-services">
+                <li>Cấp cứu 24/7</li>
+                <li>Xử lý tai nạn</li>
+                <li>Hồi sức cấp cứu</li>
+              </ul>
+              <div class="department-footer">
+                <div class="hotline emergency-hotline">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                  <span>1900.123.456</span>
+                </div>
+                <a href="#" class="btn-detail emergency-btn">Xem chi tiết</a>
               </div>
-              <a href="#" class="btn-department">Xem thêm</a>
             </div>
           </div>
 
           <!-- Khoa Tim mạch -->
           <div class="department-card">
-            <div class="department-icon">❤️</div>
-            <div class="department-header">
-              <h3>Khoa Tim mạch</h3>
-              <span class="department-badge badge-cardiology">Chuyên khoa</span>
+            <div class="department-icon-wrapper cardiology">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M19.5 12.572l-7.5 7.428-7.5-7.428A5 5 0 1 1 12 5.006a5 5 0 1 1 7.5 7.566z"/>
+              </svg>
             </div>
-            <div class="department-body">
+            <div class="department-content">
+              <div class="department-header">
+                <h3>Khoa Tim mạch</h3>
+                <span class="department-badge cardiology">Chuyên khoa</span>
+              </div>
               <p class="department-description">Chuyên điều trị các bệnh lý tim mạch với trang thiết bị hiện đại và kỹ thuật tiên tiến.</p>
-              <div class="department-info">
-                <div class="info-item">
-                  <span class="info-icon">🛏️</span>
-                  <div>
-                    <strong>25 giường</strong>
-                    <small>7 giường trống</small>
-                  </div>
+              <div class="department-stats">
+                <div class="dept-stat">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M2 4v16h20V7.5L14.5 2H2z"/>
+                    <path d="M14 2v6h6"/>
+                  </svg>
+                  <span><strong>25</strong> giường</span>
                 </div>
-                <div class="info-item">
-                  <span class="info-icon">👨‍⚕️</span>
-                  <div>
-                    <strong>6 bác sĩ</strong>
-                    <small>Chuyên khoa tim mạch</small>
-                  </div>
-                </div>
-                <div class="info-item">
-                  <span class="info-icon">📞</span>
-                  <div>
-                    <strong>024.1234.5682</strong>
-                    <small>Hotline khoa</small>
-                  </div>
+                <div class="dept-stat">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                  </svg>
+                  <span><strong>6</strong> bác sĩ</span>
                 </div>
               </div>
-              <div class="department-services">
-                <h4>Dịch vụ chính:</h4>
-                <ul>
-                  <li>Điều trị bệnh tim mạch</li>
-                  <li>Can thiệp tim mạch</li>
-                  <li>Khám sức khỏe tim mạch</li>
-                </ul>
+              <ul class="department-services">
+                <li>Điều trị bệnh tim mạch</li>
+                <li>Can thiệp tim mạch</li>
+                <li>Khám sức khỏe tim mạch</li>
+              </ul>
+              <div class="department-footer">
+                <div class="hotline">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                  <span>024.1234.5682</span>
+                </div>
+                <a href="#" class="btn-detail">Xem chi tiết</a>
               </div>
-              <a href="#" class="btn-department">Xem thêm</a>
             </div>
           </div>
         </div>
@@ -344,11 +401,23 @@
     <!-- Thông tin bổ sung -->
     <section class="departments-info-section">
       <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Hướng dẫn</span>
+          <h2 class="section-title">Thông Tin Hữu Ích</h2>
+        </div>
         <div class="info-grid">
           <div class="info-card">
-            <div class="info-icon-large">📋</div>
+            <div class="info-icon-wrapper">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
             <h3>Quy trình khám bệnh</h3>
-            <p>Quy trình khám bệnh đơn giản, nhanh chóng. Bệnh nhân có thể đặt lịch trực tuyến hoặc đến trực tiếp bệnh viện.</p>
+            <p>Quy trình khám bệnh đơn giản, nhanh chóng. Bệnh nhân có thể đặt lịch trực tuyến hoặc đến trực tiếp.</p>
             <ul>
               <li>Đăng ký khám bệnh</li>
               <li>Lấy số thứ tự</li>
@@ -357,9 +426,14 @@
             </ul>
           </div>
           <div class="info-card">
-            <div class="info-icon-large">💳</div>
+            <div class="info-icon-wrapper">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                <line x1="1" y1="10" x2="23" y2="10"/>
+              </svg>
+            </div>
             <h3>Thanh toán & Bảo hiểm</h3>
-            <p>Chấp nhận thanh toán bằng nhiều hình thức và hỗ trợ thanh toán bảo hiểm y tế theo quy định.</p>
+            <p>Chấp nhận nhiều hình thức thanh toán và hỗ trợ bảo hiểm y tế theo quy định.</p>
             <ul>
               <li>Thanh toán tiền mặt</li>
               <li>Thanh toán thẻ</li>
@@ -368,7 +442,12 @@
             </ul>
           </div>
           <div class="info-card">
-            <div class="info-icon-large">🕐</div>
+            <div class="info-icon-wrapper">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
             <h3>Giờ làm việc</h3>
             <p>Bệnh viện hoạt động với lịch làm việc linh hoạt, phục vụ bệnh nhân tốt nhất.</p>
             <ul>
@@ -377,6 +456,33 @@
               <li><strong>Chủ nhật:</strong> Nghỉ</li>
               <li><strong>Cấp cứu:</strong> 24/7</li>
             </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Cần tư vấn hoặc đặt lịch khám?</h2>
+          <p>Đội ngũ chuyên gia của chúng tôi luôn sẵn sàng hỗ trợ bạn 24/7</p>
+          <div class="cta-buttons">
+            <a href="#" class="btn-primary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              Đặt lịch hẹn
+            </a>
+            <a href="tel:1900123456" class="btn-secondary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              1900.123.456
+            </a>
           </div>
         </div>
       </div>
@@ -393,10 +499,10 @@
           </div>
           <div class="footer-col">
             <h3>Liên hệ</h3>
-            <p>📍 123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh</p>
-            <p>📞 Hotline: 1900.123.456</p>
-            <p>✉️ Email: info@hospital.vn</p>
-            <p>🌐 Website: www.hospital.vn</p>
+            <p>123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh</p>
+            <p>Hotline: 1900.123.456</p>
+            <p>Email: info@hospital.vn</p>
+            <p>Website: www.hospital.vn</p>
           </div>
           <div class="footer-col">
             <h3>Điều hướng nhanh</h3>
@@ -444,7 +550,5 @@
         </div>
       </div>
     </footer>
-
-    <script src="../js/departments.js"></script>
   </body>
 </html>
